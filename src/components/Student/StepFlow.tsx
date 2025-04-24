@@ -31,7 +31,7 @@ const ProcessStep: React.FC<ProcessStepProps> = ({ step, title, description, ico
       </Flex>
       <Box pt={1}>
         <HStack mb={1} align="center">
-          <Icon as={icon.type} color="brand.accent" w={5} h={5} />
+          <Icon as={icon.type as any} color="brand.accent" w={5} h={5} />
           <Heading as="h3" size="md" color="brand.base">
             {title}
           </Heading>

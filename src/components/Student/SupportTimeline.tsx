@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Heading, Text, Flex, HStack, VStack, Icon, Circle, Divider } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, Flex, HStack, VStack, Icon, Circle, Divider, Stack } from '@chakra-ui/react';
 import { FaPlaneDeparture, FaGlobeAsia, FaPlaneArrival } from 'react-icons/fa';
 
 type SupportStepProps = {
@@ -75,9 +75,9 @@ export const SupportTimeline = () => {
           </Box>
 
           <Box w="100%" px={{ base: 4, md: 12 }} py={8}>
-            <Flex 
-              direction={{ base: 'column', md: 'row' }} 
-              justify="space-between" 
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              justify="space-between"
               align="flex-start"
               position="relative"
               spacing={{ base: 10, md: 0 }}
@@ -95,7 +95,7 @@ export const SupportTimeline = () => {
                   />
                 </Box>
               ))}
-            </Flex>
+            </Stack>
           </Box>
 
           <Box

@@ -30,7 +30,7 @@ const NAV_ITEMS = [
   { name: '本人向け', to: '/student' },
   { name: '親御さん向け', to: '/parent' },
   { name: 'サービス紹介', to: '/services' },
-  { name: '体験談', to: '/voices' },
+  { name: '会社紹介', to: '/about' },
   { name: 'よくある質問', to: '/faq' },
   { name: 'お問い合わせ', to: '/contact' },
 ];

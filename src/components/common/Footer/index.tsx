@@ -47,8 +47,8 @@ export const Footer = () => {
             <Link as={RouterLink} to="/services" _hover={{ color: 'brand.light' }}>
               サービス紹介
             </Link>
-            <Link as={RouterLink} to="/voices" _hover={{ color: 'brand.light' }}>
-              体験談
+            <Link as={RouterLink} to="/about" _hover={{ color: 'brand.light' }}>
+              会社紹介
             </Link>
           </Stack>
 
