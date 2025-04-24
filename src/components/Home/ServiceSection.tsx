@@ -52,7 +52,7 @@ export const ServiceSection = () => {
           </Box>
 
           <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} width="full">
-            {/* u8a9eu5b66u7559u5b66 */}
+            {/* 語学留学 */}
             <Flex
               direction="column"
               bg="white"
@@ -76,7 +76,7 @@ export const ServiceSection = () => {
               </Text>
             </Flex>
 
-            {/* u30b5u30deu30fcu30adu30e3u30f3u30d7 */}
+            {/* サマーキャンプ */}
             <Flex
               direction="column"
               bg="white"
