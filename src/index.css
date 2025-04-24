@@ -1,0 +1,46 @@
+:root {
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* セクションの基本余白（共通ルールに基づく） */
+.section {
+  padding: 4rem 0;
+}
+
+/* 画像の基本スタイル */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Chakra UIのためのレスポンシブ補助クラス */
+@media (max-width: 768px) {
+  .md-hide {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .md-show {
+    display: none;
+  }
+}
