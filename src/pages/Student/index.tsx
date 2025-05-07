@@ -51,7 +51,7 @@ export const StudentPage = () => {
         title="よくある質問（学生向け）"
         description="留学に関する不安や疑問にお答えします。"
         showTabs={false}
-        maxItems={3}
+        maxItems={5}
         defaultTab={0}
       />
       

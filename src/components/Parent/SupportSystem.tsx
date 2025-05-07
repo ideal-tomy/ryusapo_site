@@ -47,35 +47,20 @@ const SupportFeature: React.FC<SupportFeatureProps> = ({ title, description, ico
 
 const supportFeatures = [
   {
-    title: '現地パートナー校との連携',
-    description: '厳選された現地パートナー校と提携し、皆様のお子様が安全かつ充実した環境で学べるようサポートしています。学校スタッフとも定期的に連携を取り、状況を常に把握しています。',
+    title: '海外大卒のスタッフがサポート',
+    description: '日本語、英語どちらでも対応可能なスタッフが引率。留学経験者だからわかる、初めての海外でも安心できる寄り添いサポート。',
     icon: <Icon as={FaUserFriends} w={6} h={6} />
   },
   {
     title: '24時間緊急サポート',
-    description: '24時間対応可能な緊急連絡先を用意。何か問題が発生した場合でも、いつでもすぐにサポートします。日本語対応スタッフが常駐しています。',
+    description: 'サマーキャンプ、現地校見学サポート中のトラブルにも対応。いつでもすぐにサポートします。',
     icon: <Icon as={FaPhoneAlt} w={6} h={6} />
   },
   {
-    title: '健康管理サポート',
-    description: '体調不良や怪我などの健康問題にも迅速に対応。現地医療機関との連携体制を整え、必要な場合は迅速に適切な医療が受けられるようサポートします。',
+    title: 'プログラム後の進路相談',
+    description: 'サマーキャンプ・現地校見学後も、次のアクションまで一貫サポート。「正規留学を本格的に検討したい」「出願準備を進めたい」といったご相談にも継続対応します。',
     icon: <Icon as={FaHeartbeat} w={6} h={6} />
   },
-  {
-    title: '海外保険手続きサポート',
-    description: '万が一の際に備えて、適切な海外旅行保険への加入をサポート。保険の選び方から手続き、緊急時の保険適用までしっかりとサポートします。',
-    icon: <Icon as={FaShieldAlt} w={6} h={6} />
-  },
-  {
-    title: '保護者への定期報告',
-    description: 'お子様の様子を定期的に保護者の方へ報告。学習の進捗、現地での生活の様子、活動の様子などを写真と共にお伝えします。',
-    icon: <Icon as={FaHandHoldingHeart} w={6} h={6} />
-  },
-  {
-    title: '医療機関へのアクセス',
-    description: '現地の信頼できる医療機関をあらかじめ調査・連携。言語の壁がある中でも適切な医療を受けられるよう、医療通訳サービスも必要に応じて提供します。',
-    icon: <Icon as={FaHospital} w={6} h={6} />
-  }
 ];
 
 export const SupportSystem = () => {
@@ -114,8 +99,8 @@ export const SupportSystem = () => {
               留サポの安全への取り組み
             </Heading>
             <Text textAlign="center" mb={4}>
-              留サポでは、お子様の安全を最優先事項と考えています。厳選されたパートナー校との連携、
-              24時間体制のサポート、緊急時の対応プロトコルなど、お子様が安心して海外で学び、
+              留サポでは、お子様の安全を最優先事項と考えています。厳選された英会話コンサルティング社 Engrowthとの提携、
+              プログラム期間中の24時間体制のサポート、お子様が安心して海外で学び、
               成長できる環境づくりに全力で取り組んでいます。
             </Text>
             <Text textAlign="center" fontWeight="bold" color="brand.base">
