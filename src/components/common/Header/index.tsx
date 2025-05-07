@@ -27,9 +27,9 @@ const LINE_URL = 'https://line.me/R/ti/p/@123abc';
 // ナビゲーションリンクの定義
 const NAV_ITEMS = [
   { name: 'トップ', to: '/' },
-  { name: '本人向け', to: '/student' },
-  { name: '親御さん向け', to: '/parent' },
-  { name: 'サービス紹介', to: '/services' },
+  { name: '中高生の方へ', to: '/student' },
+  { name: '保護者の方へ', to: '/parent' },
+  { name: 'サポート・料金', to: '/services' },
   { name: '会社紹介', to: '/about' },
   { name: 'よくある質問', to: '/faq' },
   { name: 'お問い合わせ', to: '/contact' },
@@ -109,7 +109,9 @@ export const Header = () => {
             href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            colorScheme="green"
+            bg="#06C755"
+            color="white"
+            _hover={{ bg: "#05A948" }}
             size="sm"
           >
             LINEで相談
@@ -151,7 +153,9 @@ export const Header = () => {
                 href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                colorScheme="green"
+                bg="#06C755"
+                color="white"
+                _hover={{ bg: "#05A948" }}
                 w="full"
               >
                 LINEで相談

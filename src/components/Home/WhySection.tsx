@@ -35,24 +35,25 @@ export const WhySection = () => {
       <Container maxW="container.xl">
         <VStack spacing={10} align="center">
           <Box textAlign="center" maxW="container.md" mx="auto">
-            <Text
+            {/* <Text
               color="brand.accent"
               fontWeight="bold"
               fontSize="lg"
               mb={3}
             >
               WHY STUDY ABROAD?
-            </Text>
+            </Text> */}
             <Heading as="h2" size="2xl" mb={5} color="brand.base">
-              留学とは？
+              なぜ今、"海外で学ぶ"なのか？
             </Heading>
             <Text fontSize="xl" color="gray.600" mb={8}>
-              体験が、人を育てる
+              {/* このテキストはmdに指示がないため、一旦コメントアウトまたは削除を検討 */}
+              {/* 体験が、人を育てる */}
             </Text>
           </Box>
 
           <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} width="full">
-            {/* 成長ポイント */}
+            {/* 日本式教育とのミスマッチ */}
             <Flex
               direction="column"
               align="center"
@@ -63,16 +64,16 @@ export const WhySection = () => {
               transition="transform 0.3s ease"
               _hover={{ transform: 'translateY(-5px)' }}
             >
-              <Icon as={GrowthIcon} w={12} h={12} color="brand.accent" mb={5} />
+              <Icon as={GrowthIcon} w={12} h={12} color="#002f5f" mb={5} />
               <Heading as="h3" size="md" mb={4} textAlign="center">
-                人間的成長
+                日本式教育とのミスマッチ
               </Heading>
               <Text textAlign="center" color="gray.600">
-                新しい環境での挑戦が、自信と適応力を育みます。困難を乗り越える力と、多様な価値観への理解が深まります。
+                日本の教育が合わない
               </Text>
             </Flex>
 
-            {/* 語学力ポイント */}
+            {/* 国際トレンドの波をいく詰め込み式教育 */}
             <Flex
               direction="column"
               align="center"
@@ -83,16 +84,16 @@ export const WhySection = () => {
               transition="transform 0.3s ease"
               _hover={{ transform: 'translateY(-5px)' }}
             >
-              <Icon as={LanguageIcon} w={12} h={12} color="brand.accent" mb={5} />
+              <Icon as={LanguageIcon} w={12} h={12} color="#002f5f" mb={5} />
               <Heading as="h3" size="md" mb={4} textAlign="center">
-                語学力向上
+                国際トレンドの波をいく詰め込み式教育
               </Heading>
               <Text textAlign="center" color="gray.600">
-                日常会話から実践的な表現まで、生きた言語環境で学ぶことで、教室では得られない本物の語学力が身につきます。
+                塾に行っても成果が出ない
               </Text>
             </Flex>
 
-            {/* 将来ポイント */}
+            {/* 評価制度との相性 */}
             <Flex
               direction="column"
               align="center"
@@ -103,12 +104,12 @@ export const WhySection = () => {
               transition="transform 0.3s ease"
               _hover={{ transform: 'translateY(-5px)' }}
             >
-              <Icon as={FutureIcon} w={12} h={12} color="brand.accent" mb={5} />
+              <Icon as={FutureIcon} w={12} h={12} color="#002f5f" mb={5} />
               <Heading as="h3" size="md" mb={4} textAlign="center">
-                将来の可能性
+                評価制度との相性
               </Heading>
               <Text textAlign="center" color="gray.600">
-                グローバルな視野と経験は、進学や就職で大きなアドバンテージになります。未来の選択肢が広がります。
+                英語も勉強も苦手
               </Text>
             </Flex>
           </SimpleGrid>

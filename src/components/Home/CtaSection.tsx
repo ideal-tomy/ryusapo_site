@@ -8,16 +8,20 @@ export const CtaSection = () => {
     <Box 
       as="section" 
       py={{ base: 16, md: 20 }} 
-      bg="brand.base" 
+      bg="blue.500"
       color="white"
       className="section"
+      width="full"
     >
       <Container maxW="container.xl">
-        <VStack spacing={8} align="center" textAlign="center">
-          <Heading as="h2" size="2xl" mb={4}>
+        <VStack spacing={6} align="center" textAlign="center">
+          <Heading as="h2" size="2xl">
             一歩踏み出す勇気があなたの世界を変える
           </Heading>
-          <Text fontSize="xl" maxW="container.md" mb={8}>
+          <Text fontSize="2xl" fontWeight="bold" mt={-2} mb={4}>
+            グローバルで活躍できる人材に。
+          </Text>
+          <Text fontSize="lg" maxW="container.md" mb={6}>
             まずは気軽にLINEで相談、または資料請求から。
             あなたの留学への第一歩をサポートします。
           </Text>

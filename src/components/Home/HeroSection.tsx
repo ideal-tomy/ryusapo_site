@@ -40,7 +40,7 @@ export const HeroSection = () => {
             lineHeight="1.2"
             mb={4}
           >
-            留学を、もっと身近に。
+            世界は思ったより近い
           </Heading>
 
           <Text
@@ -48,7 +48,7 @@ export const HeroSection = () => {
             fontWeight="medium"
             mb={8}
           >
-            世界が変わるきっかけを、10代のうちに。
+            教室では学べない「生きる力」と「英語力」を。
           </Text>
 
           <Flex
@@ -59,44 +59,15 @@ export const HeroSection = () => {
             mt={8}
           >
             <Button
-              as={RouterLink}
-              to="/student"
-              size="lg"
-              colorScheme="yellow"
-              color="gray.800"
-              fontWeight="bold"
-              px={8}
-              _hover={{ transform: "translateY(-2px)", boxShadow: "lg" }}
-              transition="all 0.3s ease"
-            >
-              本人向けサポートを見る
-            </Button>
-
-            <Button
-              as={RouterLink}
-              to="/parent"
-              size="lg"
-              colorScheme="blue"
-              variant="outline"
-              px={8}
-              _hover={{
-                bg: "rgba(255,255,255,0.2)",
-                transform: "translateY(-2px)",
-              }}
-              transition="all 0.3s ease"
-            >
-              親御さん向けサポートを見る
-            </Button>
-
-            <Button
               as="a"
               href={LINE_URL}
               target="_blank"
               rel="noopener noreferrer"
               size="lg"
-              colorScheme="green"
+              bg="#06C755"
+              color="white"
               px={8}
-              _hover={{ transform: "translateY(-2px)", boxShadow: "lg" }}
+              _hover={{ bg: "#05A948", transform: "translateY(-2px)", boxShadow: "lg" }}
               transition="all 0.3s ease"
             >
               LINEで相談する
