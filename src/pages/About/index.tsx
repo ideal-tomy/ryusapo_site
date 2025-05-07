@@ -15,8 +15,8 @@ export const AboutPage = () => {
     <Box as="main">
       {/* 1. ページヘッダー */}
       <PageHeader 
-        title="日本から、次世代のグローバルリーダーを。"
-        description="この社会課題を、教育の力で変えたい。"
+        title="私たちについて"
+        description="日本から、次世代のグローバルリーダーを。"
         bgImage="https://images.unsplash.com/photo-1501290741922-b56c0d0884af?q=80&w=2070"
         height={{ base: "300px", md: "400px" }}
         textColor="white"

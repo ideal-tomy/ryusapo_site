@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Container, Heading, Text, SimpleGrid, Flex, Icon, VStack } from '@chakra-ui/react';
-import { FaUsers, FaGlobeAmericas, FaGraduationCap, FaHandHoldingHeart } from 'react-icons/fa';
+import { FaExchangeAlt, FaHandsHelping, FaBrain, FaSeedling } from 'react-icons/fa';
 
 interface ApproachCardProps {
   title: string;
@@ -30,7 +30,7 @@ const ApproachCard: React.FC<ApproachCardProps> = ({ title, description, icon })
         >
           <Icon as={icon} w={8} h={8} color="brand.base" />
         </Flex>
-        <Heading as="h3" size="md" mb={3} color="brand.base">
+        <Heading as="h3" size="md" mb={3} color="brand.base" minHeight="4.5em">
           {title}
         </Heading>
         <Text color="gray.600">{description}</Text>
@@ -43,23 +43,23 @@ export const ApproachSection = () => {
   const approaches = [
     {
       title: '日本の教育観の転換',
-      description: '閉塞的な教育観や世間体主義から、体験や挑戦を重視する教育文化を創出します。',
-      icon: FaGraduationCap
+      description: '偏差値や管理を重視する画一の教育観から、"体験"や"挑戦"を通じた学びへ。\n子ども自身の内発的な動機を起点とする、新しい教育文化の創出を目指します。',
+      icon: FaExchangeAlt
     },
     {
-      title: '再出発を肯定する文化',
-      description: '若者の「やり直し」や「再出発」を肯定する文化の創出に貢献します。',
-      icon: FaUsers
+      title: '多文化を自然に受け入れられる"Multi Cultureな人材"',
+      description: '異なる価値観や文化背景を持つ人々と、自然体で関わる力。\n思春期・青年期に異文化の中で生活する経験は、柔軟なアイデンティティ形成に寄与します。\n日本人としての芯を持ちつつ、世界を"自分ごと"として理解できる人材へ。',
+      icon: FaHandsHelping
     },
     {
-      title: 'グローバルな文脈での自己定義',
-      description: '英語を通じて、自分を"グローバルな文脈"で位置づけられる力を育成します。',
-      icon: FaGlobeAmericas
+      title: '自分で考え、自分で動く"選択力"と"行動力"の育成',
+      description: '答えのない問いに向き合い、自分で考え、自分で動く習慣を日常にする。\nモンテッソーリ教育の哲学をベースに、子どもたちが"自分の人生の舵"を取る訓練を重ねていきます。',
+      icon: FaBrain
     },
     {
-      title: '機会の平等化',
-      description: '海外体験を"選ばれた一部"のものではなく、"全ての若者に開かれた選択肢"にします。',
-      icon: FaHandHoldingHeart
+      title: '生きた海外体験を通じた"生き抜く力"の醸成',
+      description: 'トラブル、異文化、戸惑い——海外生活は思い通りにいかないことの連続です。\nしかしだからこそ、正解のない環境を自分の力で乗り越える術を身につけられます。\nこの経験は、どんな時代でも通用する"生き抜く力"の源になります。',
+      icon: FaSeedling
     }
   ];
 

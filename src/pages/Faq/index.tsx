@@ -25,7 +25,6 @@ export const FaqPage = () => {
       {/* 1. ページヘッダー */}
       <PageHeader 
         title="よくある質問"
-        description="皆さまからよくいただくご質問をまとめました"
         bgImage="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070"
         height={{ base: "250px", md: "300px" }}
         textColor="white"
@@ -36,7 +35,6 @@ export const FaqPage = () => {
         categories={faqCategories}
         activeCategory={activeCategory}
         onCategoryChange={handleCategoryChange}
-        description="カテゴリを選択して、気になる質問を探してみてください"
       />
       
       {/* 3. 質問リスト */}
