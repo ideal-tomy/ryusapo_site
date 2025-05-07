@@ -5,7 +5,8 @@ import { FaCheckCircle, FaTimesCircle, FaQuestionCircle } from 'react-icons/fa';
 type ComparisonItemProps = {
   feature: string;
   ryusapo: 'yes' | 'partial' | 'no';
-  others: 'yes' | 'partial' | 'no';
+  companyA: 'yes' | 'partial' | 'no';
+  companyB: 'yes' | 'partial' | 'no';
   description?: string;
 };
 
@@ -22,7 +23,7 @@ const StatusIcon = ({ status }: { status: 'yes' | 'partial' | 'no' }) => {
   }
 };
 
-const StatusCell = ({ status, company }: { status: 'yes' | 'partial' | 'no', company: 'ryusapo' | 'others' }) => {
+const StatusCell = ({ status, company }: { status: 'yes' | 'partial' | 'no', company: 'ryusapo' | 'companyA' | 'companyB' }) => {
   return (
     <Td textAlign="center" bg={company === 'ryusapo' && status === 'yes' ? 'brand.light' : 'transparent'}>
       <Flex justify="center">
@@ -37,38 +38,51 @@ export const ComparisonTable = () => {
     {
       feature: "24時間サポート体制",
       ryusapo: "yes",
-      others: "partial",
-      description: "留サポでは24時間いつでも日本語で相談可能な体制を整えています"
+      companyA: "partial",
+      companyB: "no",
+      description: "留サポでは、プログラム期間中は24時間体制で現地でのサポート可能な体制を整えています"
     },
     {
       feature: "費用の透明性",
       ryusapo: "yes",
-      others: "no",
-      description: "追加費用が一切発生しないプラン設計を徹底しています"
+      companyA: "no",
+      companyB: "no",
+      description: "サービス範囲を明確にし、不当な追加費用が発生しない設計を徹底しています"
     },
     {
-      feature: "現地スタッフによる対応",
+      feature: "海外大卒・バイリンガルスタッフが同行",
       ryusapo: "yes",
-      others: "yes",
-      description: "全拠点に日本語対応可能なスタッフを常駐させています"
+      companyA: "yes",
+      companyB: "partial",
+      description: "UCLAをはじめとするスタッフが日本語と英語の両方で、現地でも安心サポート"
     },
     {
       feature: "帰国後のフォローアップ",
       ryusapo: "yes",
-      others: "no",
-      description: "留学体験を今後に活かすためのサポートを提供しています"
+      companyA: "no",
+      companyB: "no",
+      description: "サマーキャンプ・現地校見学後も、次のアクションまで一貫サポート"
     },
     {
-      feature: "プログラムの自由度",
+      feature: "少人数制での手厚いサポート体制",
       ryusapo: "yes",
-      others: "partial",
-      description: "完全オーダーメイドのプログラム設計が可能です"
+      companyA: "partial",
+      companyB: "partial",
+      description: "サマーキャンプではスタッフ1名につき生徒最大7名、その他サービスラインでは基本的にはマンツーマンでサポートします"
     },
     {
-      feature: "親子サポート体制",
+      feature: "最先端の教育論「モンテッソーリ教育」の考え方に基づいたプログラム設計",
       ryusapo: "yes",
-      others: "partial",
-      description: "保護者様向けの説明会や相談会を定期的に実施しています"
+      companyA: "partial",
+      companyB: "no",
+      description: "単なる海外経験に留まらず、「自分で考えて行動する力」を養うプログラム設計となっています"
+    },
+    {
+      feature: "本物の富裕層や一流の親が大切にする「心の教育」",
+      ryusapo: "yes",
+      companyA: "partial",
+      companyB: "no",
+      description: "海外の非日常の中で五感で触れる、生きた体験を重点に置いたプログラム設計"
     }
   ];
 
@@ -92,33 +106,45 @@ export const ComparisonTable = () => {
             <Table variant="simple" size="lg" bg="white" boxShadow="sm" borderRadius="lg" overflow="hidden">
               <Thead bg="brand.base">
                 <Tr>
-                  <Th color="white" fontSize="md" width="40%">比較項目</Th>
-                  <Th color="white" fontSize="md" textAlign="center" width="30%">
-                    <Badge colorScheme="yellow" fontSize="md" p={1} borderRadius="md">
+                  <Th color="white" fontSize="md" width="30%">比較項目</Th>
+                  <Th color="white" fontSize="md" textAlign="center" width="23%">
+                    <Badge colorScheme="cyan" fontSize="md" p={1} borderRadius="md">
                       留サポ
                     </Badge>
                   </Th>
-                  <Th color="white" fontSize="md" textAlign="center" width="30%">他社</Th>
+                  <Th color="white" fontSize="md" textAlign="center" width="23%">A社</Th>
+                  <Th color="white" fontSize="md" textAlign="center" width="23%">B社</Th>
                 </Tr>
               </Thead>
               <Tbody>
                 {comparisonItems.map((item, index) => (
                   <Tr key={index}>
-                    <Td fontWeight="bold">
+                    <Td fontWeight="bold" verticalAlign="top">
                       <VStack align="start" spacing={1}>
                         <Text>{item.feature}</Text>
                         {item.description && (
-                          <Text fontSize="sm" color="gray.600">{item.description}</Text>
+                          <Text fontSize="sm" color="gray.600" whiteSpace="pre-line">{item.description}</Text>
                         )}
                       </VStack>
                     </Td>
                     <StatusCell status={item.ryusapo} company="ryusapo" />
-                    <StatusCell status={item.others} company="others" />
+                    <StatusCell status={item.companyA} company="companyA" />
+                    <StatusCell status={item.companyB} company="companyB" />
                   </Tr>
                 ))}
               </Tbody>
             </Table>
           </Box>
+
+          <Box pt={10} textAlign="center" w="full">
+            <Heading as="h3" size="lg" color="brand.base" mb={4}>
+              留サポが選ばれる理由
+            </Heading>
+            <Text fontSize="md" color="gray.700" maxW="container.md" mx="auto">
+              留学経験のある海外大卒のスタッフ × 少人数体制によって、一人ひとりの挑戦と変化に、丁寧に寄り添えるサポートを実現しています。
+            </Text>
+          </Box>
+
         </VStack>
       </Container>
     </Box>

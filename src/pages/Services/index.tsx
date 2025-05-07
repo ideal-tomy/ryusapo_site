@@ -4,12 +4,12 @@ import { Box } from '@chakra-ui/react';
 // 共通コンポーネントのインポート
 import { PageHeader } from '../../components/common/PageHeader';
 import { MainCTA } from '../../components/common/MainCTA';
-import { FaqPreview } from '../../components/common/FaqPreview';
+import { FaqPreview, servicePageFaqs, FaqItem } from '../../components/common/FaqPreview';
 
 // サービス紹介ページ固有のコンポーネントのインポート
-import { ProgramCards } from '../../components/Services/ProgramCards';
-import { SupportList } from '../../components/Services/SupportList';
-import { OptionServices } from '../../components/Services/OptionServices';
+// import { ProgramCards } from '../../components/Services/ProgramCards';
+// import { SupportList } from '../../components/Services/SupportList';
+// import { OptionServices } from '../../components/Services/OptionServices';
 import { ComparisonTable } from '../../components/Services/ComparisonTable';
 
 export const ServicesPage = () => {
@@ -25,13 +25,13 @@ export const ServicesPage = () => {
       />
       
       {/* 2. プログラム一覧（カード形式） */}
-      <ProgramCards />
+      {/* <ProgramCards /> */}
       
       {/* 3. サポート内容一覧 */}
-      <SupportList />
+      {/* <SupportList /> */}
       
       {/* 4. オプションサービス紹介 */}
-      <OptionServices />
+      {/* <OptionServices /> */}
       
       {/* 5. 他社との違い（比較表） */}
       <ComparisonTable />
@@ -41,7 +41,8 @@ export const ServicesPage = () => {
         title="サービスに関するよくある質問"
         description="留学サービスについてのよくある質問と回答をご紹介します"
         showTabs={false}
-        maxItems={3}
+        studentFaqs={servicePageFaqs}
+        maxItems={6}
         defaultTab={0}
       />
       

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Container, Heading, Text, VStack, Tabs, TabList, Tab, TabPanels, TabPanel, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Button, Flex } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 
-type FaqItem = {
+export type FaqItem = {
   question: string;
   answer: string;
 };
@@ -71,6 +71,34 @@ const defaultParentFaqs: FaqItem[] = [
     question: '子どもの様子はどのように知ることができますか？',
     answer: '定期的な状況報告を行い、お子様の学習状況や生活の様子をお伝えします。必要に応じて写真や動画も共有し、成長の様子を感じていただけるようにしています。また、ご希望があれば現地スタッフとのオンライン面談も設定可能です。'
   },
+];
+
+// 新しいFAQデータセットを定義・エクスポート
+export const servicePageFaqs: FaqItem[] = [
+  {
+    question: '現地校見学は、子どもと親、一緒に行ってもいいですか？',
+    answer: 'はい。原則、保護者様もご一緒にご同行いただくようお願いいたします。お子さんだけの場合は別途個別にご相談ください。'
+  },
+  {
+    question: '志望する学校側からの説明や授業見学はできますか？',
+    answer: '学校によって対応方針が異なりますので、事前準備の段階でご相談ください。ご要望に応じて個別に学校にこちらから確認いたします。'
+  },
+  {
+    question: '見学できる学校の数に上限はありますか？',
+    answer: '見学する学校数によってサービス料金が異なります。詳しくはサポート・料金ページをご覧ください。'
+  },
+  {
+    question: 'どんな基準で志望校を選ぶのですか？',
+    answer: 'カリキュラム、部活動、地域、主な進学先など、ご要望に応じて様々な角度からお子様にとって最適な進路を一緒に考えます。'
+  },
+  {
+    question: '英語のエッセイは書いたことがないのですが、大丈夫ですか？',
+    answer: '海外の大学を卒業した弊社サポートメンバーが出願時のエッセイの添削もいたしますのでご安心ください。'
+  },
+  {
+    question: '初めての海外渡航なので不安です。何から始めればいいですか？',
+    answer: 'まずはサマーキャンプへのご参加をオススメしております！百聞は一見にしかず、海外生活がご自身に合っているかどうかを確認するためにも、ご自身で海外の空気を体験してみてください。後悔のない留学生活を送るためにも、全力でサポートさせていただきます！'
+  }
 ];
 
 export const FaqPreview: React.FC<FaqPreviewProps> = ({
