@@ -30,7 +30,7 @@ export const ContactPage = () => {
               留学について、どんなことでもお気軽にご相談ください
             </Heading>
             <Text fontSize="lg" color="gray.600" maxW="2xl">
-              専門カウンセラーが丁寧にお答えします。留学プログラムに関する質問、費用の相談、
+            専門カウンセラーが生徒一人ひとりの進路や夢に寄り添って、最善・最適な道を一緒に考えます。留学プログラムに関する質問、費用の相談、
               手続きの進め方など、どんなご質問でもお気軽にお問い合わせください。
             </Text>
           </Flex>
@@ -41,7 +41,7 @@ export const ContactPage = () => {
               <ContactForm />
             </GridItem>
             
-            {/* 4. その他のお問い合わせ方法 */}
+            {/* 4. その他のお問い合わせ方法 (復元) */}
             <GridItem>
               <ContactMethods />
             </GridItem>
