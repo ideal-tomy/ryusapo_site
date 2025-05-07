@@ -8,6 +8,7 @@ import { ServiceSection } from '../../components/Home/ServiceSection';
 import { SafeSupportSection } from '../../components/Home/SafeSupportSection';
 import { TestimonialSection } from '../../components/Home/TestimonialSection';
 import { ParentSection } from '../../components/Home/ParentSection';
+import { LearningApproachSection } from '../../components/Home/LearningApproachSection';
 import { CtaSection } from '../../components/Home/CtaSection';
 
 export const HomePage = () => {
@@ -31,6 +32,9 @@ export const HomePage = () => {
       {/* 5. 保護者の安心セクション */}
       <ParentSection />
       
+      {/* ★ここに新しいセクションを挿入 */}
+      <LearningApproachSection />
+
       {/* 6. CTAセクション（共通導線） */}
       <CtaSection />
     </Box>

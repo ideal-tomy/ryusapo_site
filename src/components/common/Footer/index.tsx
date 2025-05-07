@@ -27,7 +27,7 @@ export const Footer = () => {
               />
             </Box>
             <Text fontSize="sm">
-              若者の価値観転換と保護者の安心感を両立する教育的な留学サービス
+              世界は、思ったより近い
             </Text>
           </Stack>
 
@@ -39,10 +39,10 @@ export const Footer = () => {
               トップページ
             </Link>
             <Link as={RouterLink} to="/student" _hover={{ color: 'brand.light' }}>
-              本人向けページ
+              中高生の方へ
             </Link>
             <Link as={RouterLink} to="/parent" _hover={{ color: 'brand.light' }}>
-              親御さん向けページ
+              保護者の方へ
             </Link>
             <Link as={RouterLink} to="/services" _hover={{ color: 'brand.light' }}>
               サービス紹介

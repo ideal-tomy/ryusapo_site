@@ -1,6 +1,9 @@
 import React from 'react';
-import { Box, Container, Heading, Text, Flex, HStack, VStack, Icon, Circle, Divider, Stack } from '@chakra-ui/react';
-import { FaPlaneDeparture, FaGlobeAsia, FaPlaneArrival } from 'react-icons/fa';
+import { Box, Container, Heading, Text, Flex, HStack, VStack, Icon, Circle, Divider, Stack, Image } from '@chakra-ui/react';
+import { FaUmbrellaBeach, FaSchool, FaFileSignature } from 'react-icons/fa';
+
+// 画像をインポート
+import students01Image from '../../assets/images/students01.png';
 
 type SupportStepProps = {
   title: string;
@@ -41,19 +44,19 @@ const SupportStep: React.FC<SupportStepProps> = ({ title, description, icon, isL
 
 const supportSteps = [
   {
-    title: '出発前',
-    description: '出国手続きの案内、現地情報の共有、オリエンテーションなど、あなたの準備をサポートします。',
-    icon: <Icon as={FaPlaneDeparture} w={6} h={6} />
+    title: 'サマーキャンプ',
+    description: '本当に留学したいかまだ考えている、短期留学をしてみたい、海外での生活が自分に合っているか、お試し期間がほしい方に。',
+    icon: <Icon as={FaUmbrellaBeach} w={6} h={6} />
   },
   {
-    title: '滞在中',
-    description: '現地スタッフによる24時間サポート、LINEでの相談対応、緊急時の対応など、あなたを常にサポートします。',
-    icon: <Icon as={FaGlobeAsia} w={6} h={6} />
+    title: '現地校見学サポート',
+    description: '実際に現地の様子を見て比べてみたい、その学校にいる留学生の生の声を聞きたい方に。',
+    icon: <Icon as={FaSchool} w={6} h={6} />
   },
   {
-    title: '帰国後',
-    description: '体験の振り返り、次のステップのアドバイス、修了証の発行など、帰国後もサポートを続けます。',
-    icon: <Icon as={FaPlaneArrival} w={6} h={6} />
+    title: '志望校選び＆出願サポート',
+    description: 'どの学校が自分に合っているか分からない、英語での願書作成はハードルが高い、伸ばしたい自分の強みを客観的に言語化して欲しい方に。',
+    icon: <Icon as={FaFileSignature} w={6} h={6} />
   }
 ];
 
@@ -63,14 +66,14 @@ export const SupportTimeline = () => {
       <Container maxW="container.xl">
         <VStack spacing={10} align="center">
           <Box textAlign="center" maxW="container.md" mx="auto">
-            <Text color="brand.accent" fontWeight="bold" fontSize="lg" mb={3}>
+            <Text color="gray.400" fontWeight="bold" fontSize="lg" mb={3}>
               SUPPORT SYSTEM
             </Text>
             <Heading as="h2" size="xl" mb={5} color="brand.base">
               あなたをサポートする体制
             </Heading>
             <Text fontSize="lg" color="gray.600" mb={8}>
-              出発前から帰国後まで、留サポのスタッフがあなたの留学を総合的にバックアップします
+            留学のフェーズに合わせて、留サポのスタッフがあなたの挑戦を総合的にバックアップします。
             </Text>
           </Box>
 
@@ -98,6 +101,9 @@ export const SupportTimeline = () => {
             </Stack>
           </Box>
 
+          {/* 「LINEサポートでいつでも相談」Boxの直前に画像を追加 */}
+          <Image src={students01Image} alt="サポート体制イメージ" mb={4} />
+
           <Box
             bg="brand.light"
             p={8}
@@ -110,8 +116,7 @@ export const SupportTimeline = () => {
               LINEサポートでいつでも相談
             </Heading>
             <Text textAlign="center">
-              現地にいても日本語で相談可能。わからないことや不安なことがあれば、
-              いつでもLINEで質問できます。写真や音声メッセージも送れるので安心です。
+              現地についても日本語で相談可能。わからないことや不安なことがあれば、いつでもLINEで質問できます。写真や音声メッセージも送れるので安心です。
             </Text>
           </Box>
         </VStack>

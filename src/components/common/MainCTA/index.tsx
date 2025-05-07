@@ -41,11 +41,11 @@ export const MainCTA = ({
             size="lg"
             px={10}
             py={6}
-            bg="brand.accent"
-            color="gray.800"
+            bg="#06c755"
+            color="white"
             fontWeight="bold"
-            _hover={{ bg: 'yellow.400', transform: 'translateY(-2px)' }}
-            _active={{ bg: 'yellow.500' }}
+            _hover={{ bg: '#05a948', transform: 'translateY(-2px)' }}
+            _active={{ bg: '#048b3a' }}
             transition="all 0.3s ease"
             boxShadow="md"
           >

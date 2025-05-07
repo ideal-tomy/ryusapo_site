@@ -16,13 +16,13 @@ export const CtaSection = () => {
       <Container maxW="container.xl">
         <VStack spacing={6} align="center" textAlign="center">
           <Heading as="h2" size="2xl">
-            一歩踏み出す勇気があなたの世界を変える
+            一歩踏み出す勇気が未来を変える
           </Heading>
           <Text fontSize="2xl" fontWeight="bold" mt={-2} mb={4}>
             グローバルで活躍できる人材に。
           </Text>
           <Text fontSize="lg" maxW="container.md" mb={6}>
-            まずは気軽にLINEで相談、または資料請求から。
+            まずは気軽にLINEで相談。
             あなたの留学への第一歩をサポートします。
           </Text>
           

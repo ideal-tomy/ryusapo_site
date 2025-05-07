@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Container, Heading, Text, SimpleGrid, Flex, Image, VStack, Icon, Button } from '@chakra-ui/react';
-import { FaGraduationCap, FaUmbrella, FaHandsHelping } from 'react-icons/fa';
+import { FaGraduationCap, FaUmbrella, FaHandsHelping, FaCampground, FaSearchLocation, FaUserGraduate } from 'react-icons/fa';
 import { Link as RouterLink } from 'react-router-dom';
 
 type ProgramCardProps = {
@@ -28,12 +28,12 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ title, description, duration,
             h={12}
             align="center"
             justify="center"
-            color="white"
+            color="#002f5f"
             rounded="full"
-            bg="brand.accent"
+            bg="gray.100"
             mr={3}
           >
-            {icon}
+            {React.cloneElement(icon, { color: "#002f5f" })}
           </Flex>
           <Heading as="h3" size="md">
             {title}
@@ -52,22 +52,22 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ title, description, duration,
 
 const programs = [
   {
-    title: '語学留学',
-    description: '世界各国の語学学校で実践的な語学力を身につけるプログラム。初心者から上級者まで、レベルに応じたコースを提供しています。',
-    duration: '2週間〜1年',
-    icon: <Icon as={FaGraduationCap} w={6} h={6} />
-  },
-  {
     title: 'サマーキャンプ',
-    description: '夏休みに参加できる短期プログラム。語学学習とアクティビティを組み合わせた充実の内容で、楽しみながら国際交流ができます。',
-    duration: '1週間〜4週間',
-    icon: <Icon as={FaUmbrella} w={6} h={6} />
+    description: 'ハワイで過ごす5泊7日の短期プログラム。午前は自然体験で心を整え、午後は英語で社会課題を探究しプレゼン発表。楽しさと本格的な学びが両立する"自分を変えるきっかけ"になる体験です。',
+    duration: '5泊7日',
+    icon: <Icon as={FaCampground} w={6} h={6} />
   },
   {
-    title: 'ボランティア',
-    description: '海外でボランティア活動を行いながら言語や文化を学ぶプログラム。地域コミュニティに貢献しながら、国際的な視野を身につけます。',
-    duration: '1週間〜6ヶ月',
-    icon: <Icon as={FaHandsHelping} w={6} h={6} />
+    title: '現地校見学サポート',
+    description: '海外進学を本気で考えるなら、まずは現地の学校を自分の目で。複数の候補校を実際に訪問し、学校の雰囲気や文化を肌で感じられる体感型プログラム。スタッフの同行と通訳つきで安心。',
+    duration: '1日〜10日（訪問校数に応じて）',
+    icon: <Icon as={FaSearchLocation} w={6} h={6} />
+  },
+  {
+    title: '学習塾選び & 出願サポート',
+    description: '世界中の高校・大学から、自分に本当に合う学校をリサーチ。学校選びからエッセイ作成、書類提出までをプロが個別にサポート。「いつか留学したい」を「行ける」に変える実現型サポートです。ご希望の出願時期に応じて随時対応',
+    duration: '随時',
+    icon: <Icon as={FaUserGraduate} w={6} h={6} />
   }
 ];
 
@@ -77,14 +77,16 @@ export const ProgramOptions = () => {
       <Container maxW="container.xl">
         <VStack spacing={10} align="center">
           <Box textAlign="center" maxW="container.md" mx="auto">
-            <Text color="brand.accent" fontWeight="bold" fontSize="lg" mb={3}>
+            <Text color="gray.400" fontWeight="bold" fontSize="lg" mb={1}>
               PROGRAMS
             </Text>
             <Heading as="h2" size="xl" mb={5} color="brand.base">
-              あなたに合った留学スタイル
+              いつかを「いま」に。
             </Heading>
             <Text fontSize="lg" color="gray.600" mb={8}>
-              目的や期間、予算に合わせて最適なプログラムをご提案します
+              海外に行ってみたい」を現実に変えるためのサポートです。
+              サマーキャンプは体験、現地校見学は発見、出願は実現。
+              海外渡航歴の有無にかかわらず、誰もが安心して、自分のペースで海外留学の実現を叶えられる場所です。
             </Text>
           </Box>
 
@@ -93,17 +95,6 @@ export const ProgramOptions = () => {
               <ProgramCard key={index} {...program} />
             ))}
           </SimpleGrid>
-
-          <Button
-            as={RouterLink}
-            to="/services"
-            size="lg"
-            variant="outline"
-            colorScheme="blue"
-            mt={4}
-          >
-            すべてのプログラムを見る
-          </Button>
         </VStack>
       </Container>
     </Box>

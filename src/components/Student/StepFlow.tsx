@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Heading, Text, VStack, HStack, Circle, Flex, Icon, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, VStack, HStack, Button, Circle, Flex, Icon, useBreakpointValue } from '@chakra-ui/react';
 import { FaSearch, FaComments, FaPaperPlane, FaPlane, FaGlobeAsia } from 'react-icons/fa';
 
 type ProcessStepProps = {
@@ -52,7 +52,7 @@ const steps = [
   {
     step: 2,
     title: '無料カウンセリング',
-    description: 'あなたの希望や状況に合わせて最適なプログラムをご提案します。目的、期間、予算などお気軽にご相談ください。オンラインでも対面でも対応可能です。',
+    description: 'あなたの希望や状況に合わせて最適なプログラムをご提案します。目的、期間、予算などお気軽にご相談ください。原則、オンラインでの実施。一部、提携学習塾にて対面も可。',
     icon: <Icon as={FaComments} />
   },
   {
@@ -69,8 +69,8 @@ const steps = [
   },
   {
     step: 5,
-    title: '留学生活スタート！',
-    description: '現地到着後も24時間体制でサポート。何か困ったことがあればすぐに相談できる環境を整えています。素晴らしい留学体験をお祈りしています！',
+    title: '留学スタート！',
+    description: '素晴らしい留学体験をお祈りしています！',
     icon: <Icon as={FaGlobeAsia} />
   }
 ];
@@ -83,7 +83,7 @@ export const StepFlow = () => {
       <Container maxW="container.xl">
         <VStack spacing={10} align="center">
           <Box textAlign="center" maxW="container.md" mx="auto">
-            <Text color="brand.accent" fontWeight="bold" fontSize="lg" mb={3}>
+            <Text color="gray.400" fontWeight="bold" fontSize="lg" mb={3}>
               APPLICATION PROCESS
             </Text>
             <Heading as="h2" size="xl" mb={5} color="brand.base">
@@ -92,6 +92,18 @@ export const StepFlow = () => {
             <Text fontSize="lg" color="gray.600" mb={8}>
               留学の相談から出発までの流れをご紹介します。一人ひとりに合わせたサポートで、あなたの挑戦を応援します。
             </Text>
+
+            <HStack spacing={4} mb={10} justify="center">
+              <Button colorScheme="blue" variant="solid" borderRadius="md" px={6} bg="#2b6cb0" _hover={{ bg: "#2b6cb0" }} color="white">
+                サマーキャンプ
+              </Button>
+              <Button colorScheme="blue" variant="solid" borderRadius="md" px={6} bg="#2b6cb0" _hover={{ bg: "#2b6cb0" }} color="white">
+                現地校見学サポート
+              </Button>
+              <Button colorScheme="blue" variant="solid" borderRadius="md" px={6} bg="#2b6cb0" _hover={{ bg: "#2b6cb0" }} color="white">
+                志望校選び＆出願サポート
+              </Button>
+            </HStack>
           </Box>
 
           <Box width="100%" maxW="container.md" mx="auto" px={isMobile ? 4 : 0}>
