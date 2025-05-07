@@ -12,6 +12,7 @@ import { FaqPreview } from '../../components/common/FaqPreview';
 import { WorryList } from '../../components/Parent/WorryList';
 import { SupportSystem } from '../../components/Parent/SupportSystem';
 import { ParentVoices } from '../../components/Parent/ParentVoices';
+import { FutureSupportSection } from '../../components/Parent/FutureSupportSection';
 
 export const ParentPage = () => {
   return (
@@ -27,6 +28,9 @@ export const ParentPage = () => {
       
       {/* 2. 不安に共感するセクション */}
       <WorryList />
+      
+      {/* 新しいセクションの追加 */}
+      <FutureSupportSection />
       
       {/* 3. サポート体制詳細 */}
       <SupportSystem />

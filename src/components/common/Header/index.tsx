@@ -18,8 +18,7 @@ import {
   DrawerCloseButton,
 } from '@chakra-ui/react';
 
-// ロゴのパスは後で差し替えが必要です
-const LOGO_PATH = '/src/assets/logo.png';
+import footerLogoImage from '../../../assets/images/footerlogo02.jpg'; // 相対パスを修正
 
 // LINE公式アカウントのURLを修正
 const LINE_URL = 'https://lin.ee/0iQNlSK';
@@ -76,7 +75,7 @@ export const Header = () => {
                 alt="留サポ"
                 height="40px"
                 width="auto"
-                src={LOGO_PATH}
+                src={footerLogoImage} // インポートした画像変数を使用
                 fallbackSrc="https://via.placeholder.com/150x50?text=留サポ"
               />
             </Box>
