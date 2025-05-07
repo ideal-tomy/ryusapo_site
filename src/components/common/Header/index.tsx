@@ -21,8 +21,8 @@ import {
 // ロゴのパスは後で差し替えが必要です
 const LOGO_PATH = '/src/assets/logo.png';
 
-// LINE公式アカウントのURLは後で正確なものに差し替えが必要です
-const LINE_URL = 'https://line.me/R/ti/p/@123abc';
+// LINE公式アカウントのURLを修正
+const LINE_URL = 'https://lin.ee/0iQNlSK';
 
 // ナビゲーションリンクの定義
 const NAV_ITEMS = [

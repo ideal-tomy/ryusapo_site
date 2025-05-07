@@ -12,7 +12,7 @@ type MainCTAProps = {
 
 // デフォルト値を設定
 export const MainCTA = ({
-  lineUrl = 'https://line.me/R/ti/p/@123abc',
+  lineUrl = 'https://lin.ee/0iQNlSK',
   buttonText = 'LINEで無料相談する',
   subText = 'まずは気軽に話してみませんか？',
 }: MainCTAProps) => {

@@ -42,7 +42,7 @@ export const ContactMethods = () => {
                 rightIcon={<FaLine />} 
                 _hover={{ bg: 'gray.100' }}
                 as={Link}
-                href="https://lin.ee/yourlineaccount"
+                href="https://lin.ee/0iQNlSK"
                 isExternal
               >
                 LINEで相談する
