@@ -12,16 +12,27 @@ type TestimonialProps = {
 // 仮の体験談データ（後で実際のデータに置き換える予定）
 const testimonials: TestimonialProps[] = [
   {
-    name: '山田 裕子',
-    age: '高校2年生',
-    text: '「カナダでの夏休み留学は人生を変える経験になりました。最初は不安でしたが、現地の人々の温かさに触れて、自分に自信がつきました。英語が話せるようになった嬉しさは今でも忘れられません！」',
+    name: '「塾では見えなかった“成長の芽”が、ハワイで一気に芽吹きました」',
+    age: '（中学2年生・私立一貫校 / 保護者さま）',
+    text: `子どもは昔から「暗記型」の勉強が苦手でしたが、留サポのキャンプで、自分の意見をまとめて英語で話すプレゼンに初めて「楽しい」と感じたようです。 帰国後も、自発的に海外大学の情報を集めていて、目の輝きが違います。
+安全面やサポート体制がしっかりしていたのも、親として非常に安心できました。`,
     avatarUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070',
   },
   {
-    name: '佐藤 健太',
-    age: '大学1年生',
-    text: '「オーストラリアでのボランティア活動を通じて、異文化理解の大切さを学びました。現地の子どもたちと一緒に活動する中で、コミュニケーションの本質を理解できたのが一番の収穫です。」',
+    name: 'UCLA出身のスタッフが同行"と聞いて、即決でした',
+    age: '（中学3年生・私立校 / 保護者さま）',
+    text: `家庭内では「いずれは英語圏の大学へ」と話していましたが、最初の一歩に何をすれば良いか悩んでいました。
+留サポのプログラムは、単なる英語体験ではなく"論理力・表現力・実行力"まで含めた、まさに海外型の教育。
+スタッフの方がUCLA卒と聞いて信頼感があり、同行もしてくださると聞いて迷わずお願いしました。実際、本人も「大学はアメリカに行きたい」と言い出し、親子で本気の話ができています。`,
     avatarUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=2069',
+  },
+  {
+    name: '行くだけ"では足りないと実感。Engrowthで準備して正解でした。', // 仮の名前
+    age: '（高校1年生・私立一貫校 / 保護者さま）',
+    text: `留サポのサマーキャンプに参加後、海外高校へ進学前に、提携しているEngrowth社で英語のエッセイライティングや英会話を強化できるEngrowthのプログラムも受講しました。 英語が苦手なまま現地に行くと、友達もできず孤立してしまう…と聞いていたのでとても心配でしたが、うちの子は現地到着後すぐに友達ができ、毎日楽しそうに過ごしていて、親として本当に安心しました。
+特に、名門大学出身のコンサルタント（うちの子の担当はケンブリッチ大学院の方でした）がマンツーマンで教えてくれるので、本人のやる気にも繋がったようです。
+「準備してから行く」ことで、海外体験の質が何倍にもなることを、私自身が実感しました。`,
+    avatarUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070', // 仮のアバター
   },
 ];
 
@@ -38,7 +49,7 @@ const Testimonial = ({ name, age, text, avatarUrl }: TestimonialProps) => {
     >
       <Flex direction="column" height="100%">
         <Box mb={4}>
-          <Text fontSize="lg" fontStyle="italic" color="gray.600">
+          <Text fontSize="lg" fontStyle="italic" color="gray.600" whiteSpace="pre-line">
             "{text}"
           </Text>
         </Box>
@@ -76,48 +87,16 @@ export const TestimonialSection = () => {
             </Text>
           </Box>
 
-          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} width="full">
+          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} width="full">
             {testimonials.map((testimonial, index) => (
-              <Testimonial key={index} {...testimonial} />
+              <Testimonial 
+                key={index} 
+                name={testimonial.name} 
+                age={testimonial.age} 
+                text={testimonial.text} 
+                avatarUrl={testimonial.avatarUrl} 
+              />
             ))}
-          </SimpleGrid>
-
-          <Box mt={10} p={6} bg="gray.100" borderRadius="lg" width="full" textAlign="center">
-            <Heading as="h3" size="lg" mb={4} color="brand.base">
-              「行くだけでは意味ない」と痛感。
-              <br />
-              Engrowthで準備して正解でした
-            </Heading>
-            <Text color="gray.700">
-              （ここに詳細なテキストが入ります。mdの画像からは具体的なテキスト内容が読み取れないため、プレースホルダーとしています。）
-            </Text>
-            <Text color="gray.700" mt={2}>
-              （「高校1年生・私立文系／保護者さま」などの情報もここに追加可能です。）
-            </Text>
-          </Box>
-
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} width="full" mt={10}>
-            <Box bg="white" p={6} borderRadius="lg" boxShadow="md">
-              <Heading as="h4" size="md" mb={3} color="brand.base">塾では見えなかった「本物の学び」が、ハワイで一気に花開きました</Heading>
-              <Text fontSize="sm" color="gray.500" mb={3}>（中高2年生・私立一貫校／保護者さま）</Text>
-              <Text color="gray.700">
-                子どもは昔から「暗記型」の勉強が苦手でしたが、留サポのキャンプで、自分の意見をまとめて英語で話すプレゼンに初めて「楽しい」と言ったようです。帰国後も、自発的に海外大学の情報を集めていて、目の輝きが違います。学生サポートや学習サポートがしっかりしていたのも、親として非常に安心できました。
-              </Text>
-            </Box>
-            <Box bg="white" p={6} borderRadius="lg" boxShadow="md">
-              <Heading as="h4" size="md" mb={3} color="brand.base">「UCLA出身のスタッフが『同行』と聞いて、即決でした」</Heading>
-              <Text fontSize="sm" color="gray.500" mb={3}>（中高3年生・私立校／保護者さま）</Text>
-              <Text color="gray.700">
-                家庭内では「いずれは英語圏の大学へ」と話していましたが、最初の一歩に何をすれば良いか悩んでいました。留サポのプログラムは、単なる英語体験ではなく"論理力・表現力・実行力"まで含めた、まさに海外型の教育。スタッフの方もUCLA卒と聞いて信頼感があり、同行してくださると聞いて迷わずお願いしました。実際、本人も「大学はアメリカに行きたい」と言い出し、親子で本気の話ができています。
-              </Text>
-            </Box>
-            <Box bg="white" p={6} borderRadius="lg" boxShadow="md">
-              <Heading as="h4" size="md" mb={3} color="brand.base">「行くだけでは意味ない」と痛感。Engrowthで準備して正解でした</Heading>
-              <Text fontSize="sm" color="gray.500" mb={3}>（高校1年生・私立文系／保護者さま）</Text>
-              <Text color="gray.700">
-                留サポのサマーキャンプに参加後、海外高校へ進学前に、提携しているEngrowth社で英語のエッセイライティングや英会話を強化できるEngrowthのプログラムも受講しました。英語が苦手なまま現地に行くと、友達もできず孤立してしまう…と聞いていたのでとても心配でしたが、うちの子は現地到着後すぐに友達ができ、毎日楽しそうに過ごしていて、親として本当に安心しました。特に、名門大学出身のコンサルタント（うちの子の担当はケンブリッジ大学卒の方でした）がマンツーマンで教えてくれるので、本人のやる気にも繋がったようです。「準備してから行く」ことで、海外体験の質が何倍にもなることを、私自身が実感しました。
-              </Text>
-            </Box>
           </SimpleGrid>
 
           <Button

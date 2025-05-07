@@ -63,14 +63,15 @@ export const ServiceSection = () => {
               <Flex align="center" mb={4}>
                 <Icon as={LanguageStudyIcon} w={10} h={10} color="brand.accent" mr={3} />
                 <Heading as="h3" size="md">
-                  語学留学
+                  サマーキャンプ
                 </Heading>
               </Flex>
               <Text color="gray.600" mb={4}>
-                語学留学プログラムでネイティブとの会話や文化交流を通じて続けられる英語力を身につけます。クラス外のアクティビティも充実。
+              ハワイでの5泊7日。午前は五感で自然に触れる「心の教育」、午後は現地の社会課題をテーマに英語でプレゼン研修。初めての海外でも安心。楽しみながら、思考力・表現力・英語力が自然と育つ体験型プログラム。
               </Text>
               <Text fontWeight="bold" color="brand.base">
-                期間: 2週間〜1年
+              A日程：2025年8月4〜8日
+              B日程：2025年8月11〜15日
               </Text>
             </Flex>
 
@@ -87,14 +88,12 @@ export const ServiceSection = () => {
               <Flex align="center" mb={4}>
                 <Icon as={SummerCampIcon} w={10} h={10} color="brand.accent" mr={3} />
                 <Heading as="h3" size="md">
-                  サマーキャンプ
+                志望校選び＆出願サポート
                 </Heading>
               </Flex>
               <Text color="gray.600" mb={4}>
-                語学留学プログラムでネイティブとの会話や文化交流を通じて続けられる英語力を身につけます。クラス外のアクティビティも充実。
-              </Text>
-              <Text fontWeight="bold" color="brand.base">
-                期間: 1週間〜4週間
+              欧米を中心に4万校以上ある高校・大学の中から、お子様に合った志望校をリサーチ。
+カリキュラム、部活動、気候、環境までを考慮してお子様にとってベストな候補を複数ご提案します。出願書類の作成・面談対策も全面支援いたします。
               </Text>
             </Flex>
 
@@ -111,47 +110,15 @@ export const ServiceSection = () => {
               <Flex align="center" mb={4}>
                 <Icon as={VolunteerIcon} w={10} h={10} color="brand.accent" mr={3} />
                 <Heading as="h3" size="md">
-                  ボランティア
+                現地校見学サポート
                 </Heading>
               </Flex>
               <Text color="gray.600" mb={4}>
-                海外でボランティア活動を行いながら言語や文化を学ぶプログラム。地域コミュニティに貢献しながら、国際的な視野を身につけます。
-              </Text>
-              <Text fontWeight="bold" color="brand.base">
-                期間: 1週間〜6ヶ月
+              実際に現地の高校・大学を訪問。担当者との面談や、在校生との会話も同行通訳つきでサポート。
+
+百聞は一見に如かず、海外進学の不安を、実際に見て・感じることで「確信」に変えます。
               </Text>
             </Flex>
-          </SimpleGrid>
-
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} width="full" mt={10}>
-            {/* サマーキャンプ詳細 */}
-            <Box bg="white" p={6} borderRadius="lg" boxShadow="md">
-              <Heading as="h4" size="lg" mb={3} color="brand.base">
-                サマーキャンプ
-              </Heading>
-              <Text color="gray.700" mb={2}>ハワイでの5泊7日。午前は五感で自然に触れる「心の教育」、午後は現地の社会課題をテーマに英語でプレゼン研修。</Text>
-              <Text color="gray.700" mb={2}>初めての海外でも安心。楽しみながら、思考力・表現力・実践力が自然と身につく体験型プログラム。</Text>
-              <Text fontWeight="bold" color="gray.700">A日程: 2025年8月4日～8日</Text>
-              <Text fontWeight="bold" color="gray.700">B日程: 2025年8月11日～15日</Text>
-            </Box>
-
-            {/* 学習塾選び & 出願サポート詳細 */}
-            <Box bg="white" p={6} borderRadius="lg" boxShadow="md">
-              <Heading as="h4" size="lg" mb={3} color="brand.base">
-                学習塾選び & 出願サポート
-              </Heading>
-              <Text color="gray.700" mb={2}>欧米を中心に4万校以上ある高校・大学の中から、お子様に合った志望校をリサーチ。</Text>
-              <Text color="gray.700" mb={2}>カリキュラム、部活動、気候、環境までを考慮してお子様にとってベストな候補を複数ご提案します。出願書類の作成・面接対策も全面支援いたします。</Text>
-            </Box>
-
-            {/* 現地校見学サポート詳細 */}
-            <Box bg="white" p={6} borderRadius="lg" boxShadow="md">
-              <Heading as="h4" size="lg" mb={3} color="brand.base">
-                現地校見学サポート
-              </Heading>
-              <Text color="gray.700" mb={2}>実際に現地の高校・大学を訪問。担当者との面談や、在校生との会話も同行通訳つきでサポート。</Text>
-              <Text color="gray.700" mb={2}>百聞は一見に如かず。海外進学の不安を、実際に見て・感じることで「確信」に変えます。</Text>
-            </Box>
           </SimpleGrid>
         </VStack>
       </Container>

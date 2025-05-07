@@ -1,42 +1,62 @@
 import React from 'react';
 import { Box, Container, Heading, Text, SimpleGrid, Flex, Icon, Button, VStack, HStack, StackDivider } from '@chakra-ui/react';
-import { FaShieldAlt, FaCreditCard, FaPhone, FaHeadset, FaUserFriends, FaRegLightbulb, FaBookReader } from 'react-icons/fa';
+import { FaShieldAlt, FaCreditCard, FaPhone, FaHeadset, FaUserFriends, FaRegLightbulb, FaBookReader, FaComments, FaSearch, FaUserCheck } from 'react-icons/fa';
 import { Link as RouterLink } from 'react-router-dom';
 
 type SecurityFeatureProps = {
   icon: React.ReactElement;
   title: string;
   description: string;
+  label: string;
 };
 
-const SecurityFeature: React.FC<SecurityFeatureProps> = ({ icon, title, description }) => {
+const SecurityFeature: React.FC<SecurityFeatureProps> = ({ icon, title, description, label }) => {
   return (
-    <VStack
-      align="flex-start"
-      p={6}
-      bg="white"
-      borderRadius="lg"
-      boxShadow="md"
-      transition="all 0.3s"
-      _hover={{ transform: 'translateY(-5px)', boxShadow: 'lg' }}
-    >
-      <Flex
-        w={12}
-        h={12}
-        align="center"
-        justify="center"
-        color="white"
-        rounded="full"
-        bg="brand.base"
-        mb={4}
+    <Box pt={8} position="relative">
+      <Box 
+        as="span" 
+        position="absolute" 
+        top={0} 
+        left={0} 
+        bg="blue.600"
+        color="white" 
+        px={3} 
+        py={1} 
+        borderRadius="md" 
+        fontSize="sm" 
+        fontWeight="bold"
       >
-        {icon}
-      </Flex>
-      <Heading as="h3" fontSize="xl" mb={2} color="brand.base">
-        {title}
-      </Heading>
-      <Text color="gray.600">{description}</Text>
-    </VStack>
+        {label}
+      </Box>
+      <VStack
+        align="center"
+        p={6}
+        bg="white"
+        borderRadius="lg"
+        boxShadow="md"
+        transition="all 0.3s"
+        _hover={{ transform: 'translateY(-5px)', boxShadow: 'lg' }}
+        height="100%"
+        textAlign="center"
+      >
+        <Flex
+          w={12}
+          h={12}
+          align="center"
+          justify="center"
+          color="white"
+          rounded="full"
+          bg="brand.base"
+          mb={4}
+        >
+          {icon}
+        </Flex>
+        <Heading as="h3" fontSize="xl" mb={2} color="brand.base">
+          {title}
+        </Heading>
+        <Text color="gray.600">{description}</Text>
+      </VStack>
+    </Box>
   );
 };
 
@@ -60,19 +80,22 @@ const securityFeatures = [
 
 const anxieties = [
   {
-    icon: <Icon as={FaCreditCard} w={6} h={6} />,
-    title: '費用が明確ではないので、ちゃんと総額で話できるか心配…',
-    description: '必要な費用をすべて事前にご提示。透明性の高い料金体系で、後から追加費用が発生することはありません。',
+    label: 'サマーキャンプ',
+    icon: <Icon as={FaComments} w={6} h={6} />,
+    title: '英語が得意ではないので、ちゃんと理解できるか心配…',
+    description: '必要に応じて日本語でのフォローも行いながら、少しずつ英語での実践力を育てていきます。',
   },
   {
-    icon: <Icon as={FaBookReader} w={6} h={6} />,
-    title: '海外の語学に興味はあるけど、最初のテーマが読み出せない',
-    description: 'サマーキャンプや現地校見学から始め、徐々に本人の意思と志望校を固めていける"分かりやすい導線"があります。',
+    label: '現地校見学サポート',
+    icon: <Icon as={FaSearch} w={6} h={6} />,
+    title: '海外の進学に興味はあるけど、最初の一歩が踏み出せない',
+    description: 'サマーキャンプや現地校見学から始め、徐々に本人の意志と志望校を固めていける"分かりやすい導線"があります。',
   },
   {
-    icon: <Icon as={FaHeadset} w={6} h={6} />,
+    label: '志望校選び＆出願サポート',
+    icon: <Icon as={FaUserCheck} w={6} h={6} />,
     title: '親である私が英語を話せず手続きや準備ができるか不安',
-    description: '出願や入学にかかる複雑な手続きも弊社にてサポートいたします。親御さんにご対応いただくのはサインなど最低限のみなので、忙しい方でも安心です。',
+    description: '出願や入学にかかる書類作成も弊社でサポートいたします。親御さんにご対応いただくのはサインなど最低限のみなので、忙しい方でも安心です。',
   },
 ];
 
@@ -81,6 +104,8 @@ export const ParentSection = () => {
     <Box as="section" py={{ base: 12, md: 16 }} bg="gray.50" className="section">
       <Container maxW="container.xl">
         <VStack spacing={10} align="stretch">
+          {/* 安心のサポート体制の部分はSafeSupportSection.tsxへ移植したため削除 */}
+          {/* 
           <Box>
             <Heading as="h2" size="xl" mb={3} textAlign="center" color="brand.base">
               安心のサポート体制
@@ -134,8 +159,9 @@ export const ParentSection = () => {
               </Box>
             </SimpleGrid>
           </Box>
+          */}
 
-          <Box textAlign="center" maxW="container.lg" mx="auto">
+          <Box textAlign="center" maxW="container.lg" mx="auto" pt={10}>
             <Text color="brand.accent" fontWeight="bold" fontSize="lg" mb={3}>
               FOR PARENTS
             </Text>

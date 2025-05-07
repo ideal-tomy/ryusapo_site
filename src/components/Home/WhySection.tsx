@@ -113,6 +113,21 @@ export const WhySection = () => {
               </Text>
             </Flex>
           </SimpleGrid>
+
+          {/* 追加テキストブロック */}
+          <VStack spacing={4} mt={10} maxW="container.md" textAlign="center">
+            <Text fontSize="lg" color="gray.700">
+              そんな子どもたちは、「伸びない子」ではありません。
+              彼らは、もっと広い世界で、自分の可能性を見つけるべき時期にいるのかもしれません。
+            </Text>
+            <Text fontSize="lg" color="gray.700">
+              海外では、日本のような「正解・不正解」を○×で採点するのではなく、問題解決能力や論理的思考力など、さまざまな観点から、個人の思考・主張に重きを置いた評価制度がスタンダードになっています。
+            </Text>
+            <Text fontSize="lg" color="gray.700">
+              留サポでは、子どもの個性を活かせる"海外という選択肢"を、 安心・安全の体制でご提案します。
+            </Text>
+          </VStack>
+
         </VStack>
       </Container>
     </Box>
