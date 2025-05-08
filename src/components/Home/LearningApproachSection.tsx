@@ -23,6 +23,7 @@ export const LearningApproachSection = () => {
 
           <Divider />
 
+          
           {/* 3つのプログラム説明 */}
           <List spacing={8}>
             <ListItem>
@@ -71,34 +72,61 @@ export const LearningApproachSection = () => {
 
           <Divider />
 
-          {/* 2つの理念説明 */}
-          <VStack spacing={8} align="stretch">
-            <Box>
-              <Heading as="h3" size="lg" mb={3} color="brand.base">
-                <Icon as={FaGlobeAsia} mr={2} verticalAlign="middle" />
-                <Text as="span" color="brand.accent">真のグローバル人材</Text>を育てる、思春期からの海外経験
+          {/* 背景色を設定する新しい親Box */}
+          <Box bg="gray.100" py={{ base: 6, md: 10 }} px={{ base: 4, md: 6 }} borderRadius="lg">
+            {/* 新しいタイトルの追加場所 */}
+            <Box textAlign="center" pb={8}> {/* 上のpyがあるので、ここはpbのみに調整 */}
+              <Heading as="h2" size="xl" color="brand.base">
+                {'どんな色にも染まれる'}
+                <Text as="span" color="brand.accent" display="inline">
+                  10代
+                </Text>
+                {'のうちに、多様性に触れよう'}
               </Heading>
-              <Text color="gray.700" pl={10}> {/* アイコン分インデント */}
-                「Multi Cultureな人材」は、思春期・青年期の海外経験からこそ育まれます。
-                アイデンティティが未形成な幼少期ではなく、自我が芽生え始める高校・大学の時期に海外へ出ることで、
-                「日本人としての価値観」と「世界で求められる力」の双方を兼ね備えた人格が育ちます。
-                異文化を理解する柔軟性と、日本らしい調和・礼節を大切にする感性。
-                そこに自己主張と行動力が加わったとき、初めて真にグローバルな人材となり得るのです。
-              </Text>
             </Box>
-            <Box>
-              <Heading as="h3" size="lg" mb={3} color="brand.base">
-                <Icon as={FaBullseye} mr={2} verticalAlign="middle" />
-                留サポが目指すもの｜"周囲との差"ではなく、<Text as="span" color="brand.accent">"未来を創る力"</Text>を。
-              </Heading>
-              <Text color="gray.700" pl={10}> {/* アイコン分インデント */}
-                私たちのサービスは、周囲と一線を画すための"体験型学び"であり、
-                その根底には<Text as="strong" fontWeight="bold">"自分の人生を自分で選ぶ力を育てる"</Text>教育哲学があります。
-                それは、"肩書き"ではなく<Text as="strong" fontWeight="bold">"軸のある生き方"</Text>で選ばれる人間を育てるということ。
-                世界で活躍する次世代のグローバルリーダーを、ここから育てていきます。
-              </Text>
-            </Box>
-          </VStack>
+
+            {/* 2つの理念説明 */}
+            <VStack spacing={8} align="stretch">
+              <Box>
+                <Heading as="h3" size="lg" mb={3} color="brand.base">
+                  <Icon as={FaGlobeAsia} mr={2} verticalAlign="middle" />
+                  <Text as="span" color="brand.accent">真のグローバル人材</Text>を育てる、思春期からの海外経験
+                </Heading>
+                <Text color="gray.700" pl={10}> {/* アイコン分インデント */}
+                  「Multi Cultureな人材」は、思春期・青年期の海外経験からこそ育まれます。
+                  アイデンティティが未形成な幼少期ではなく、自我が芽生え始める高校・大学の時期に海外へ出ることで、
+                  「日本人としての価値観」と「世界で求められる力」の双方を兼ね備えた人格が育ちます。
+                  異文化を理解する柔軟性と、日本らしい調和・礼節を大切にする感性。
+                  そこに自己主張と行動力が加わったとき、初めて真にグローバルな人材となり得るのです。
+                </Text>
+              </Box>
+              <Box>
+                <Heading as="h3" size="lg" mb={1} color="brand.base">
+                  <Icon as={FaBullseye} mr={2} verticalAlign="middle" />
+                  留サポが目指すもの
+                </Heading>
+                <Box textAlign="center" mt={1}>
+                  <Heading as="h3" size="lg" display="block">
+                    <Text as="span" color="brand.base" display="inline">
+                      {"\"周囲との差\"ではなく、"}
+                    </Text>
+                    <Text as="span" color="brand.accent" display="inline">
+                      "未来を創る力"
+                    </Text>
+                    <Text as="span" color="brand.base" display="inline">
+                      を。
+                    </Text>
+                  </Heading>
+                </Box>
+                <Text color="gray.700" pl={10} mt={3}> {/* アイコン分インデントとマージン調整 */}
+                  私たちのサービスは、周囲と一線を画すための"体験型学び"であり、
+                  その根底には<Text as="strong" fontWeight="bold">"自分の人生を自分で選ぶ力を育てる"</Text>教育哲学があります。
+                  それは、"肩書き"ではなく<Text as="strong" fontWeight="bold">"軸のある生き方"</Text>で選ばれる人間を育てるということ。
+                  世界で活躍する次世代のグローバルリーダーを、ここから育てていきます。
+                </Text>
+              </Box>
+            </VStack>
+          </Box>{/* 背景色を設定した親Boxの閉じタグ */}
 
         </VStack>
       </Container>

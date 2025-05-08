@@ -39,8 +39,9 @@ export const HeroSection = () => {
             fontWeight="bold"
             lineHeight="1.2"
             mb={4}
+            whiteSpace="pre-line"
           >
-            世界は思ったより近い
+            {'世界は、\n思ったより近い'}
           </Heading>
 
           <Text

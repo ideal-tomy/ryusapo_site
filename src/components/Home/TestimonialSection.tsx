@@ -1,42 +1,41 @@
-import { Box, Container, Heading, Text, SimpleGrid, Flex, Avatar, VStack, Button, Link } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, SimpleGrid, Flex, Avatar, VStack, Button, Link, Icon } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import React from 'react';
+import { FaStar } from 'react-icons/fa';
 
 type TestimonialProps = {
   name: string;
   age: string;
   text: string;
   avatarUrl: string;
+  rating?: number;
 };
 
-// 仮の体験談データ（後で実際のデータに置き換える予定）
 const testimonials: TestimonialProps[] = [
   {
-    name: '「塾では見えなかった“成長の芽”が、ハワイで一気に芽吹きました」',
-    age: '（中学2年生・私立一貫校 / 保護者さま）',
-    text: `子どもは昔から「暗記型」の勉強が苦手でしたが、留サポのキャンプで、自分の意見をまとめて英語で話すプレゼンに初めて「楽しい」と感じたようです。 帰国後も、自発的に海外大学の情報を集めていて、目の輝きが違います。
-安全面やサポート体制がしっかりしていたのも、親として非常に安心できました。`,
-    avatarUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070',
+    name: 'T.K',
+    age: '中学3年生時にサマーキャンプ、その後高校から渡米',
+    text: '中学生まで勉強が苦手でスポーツばかりしていましたが、このままではマズイと思い留学を決めました。\n英語が話せるようになったおかげで、大手外資系IT企業にも就職できたので、本当に人生を変える経験となりました。',
+    avatarUrl: './images/taiken01.jpg',
+    rating: 5,
   },
   {
-    name: 'UCLA出身のスタッフが同行"と聞いて、即決でした',
-    age: '（中学3年生・私立校 / 保護者さま）',
-    text: `家庭内では「いずれは英語圏の大学へ」と話していましたが、最初の一歩に何をすれば良いか悩んでいました。
-留サポのプログラムは、単なる英語体験ではなく"論理力・表現力・実行力"まで含めた、まさに海外型の教育。
-スタッフの方がUCLA卒と聞いて信頼感があり、同行もしてくださると聞いて迷わずお願いしました。実際、本人も「大学はアメリカに行きたい」と言い出し、親子で本気の話ができています。`,
-    avatarUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=2069',
+    name: 'N.F',
+    age: 'UCLA卒業',
+    text: '高校の頃は英語が苦手で赤点ばかりだった私がUCLAに合格。自力で学費を稼ぎながら必死に学び、気づけばネイティブと間違われるほど英語が上達。留学は大変だったけど、努力は絶対に裏切らない！',
+    avatarUrl: './images/S__10854411_0.jpg',
+    rating: 5,
   },
   {
-    name: '行くだけ"では足りないと実感。Engrowthで準備して正解でした。', // 仮の名前
-    age: '（高校1年生・私立一貫校 / 保護者さま）',
-    text: `留サポのサマーキャンプに参加後、海外高校へ進学前に、提携しているEngrowth社で英語のエッセイライティングや英会話を強化できるEngrowthのプログラムも受講しました。 英語が苦手なまま現地に行くと、友達もできず孤立してしまう…と聞いていたのでとても心配でしたが、うちの子は現地到着後すぐに友達ができ、毎日楽しそうに過ごしていて、親として本当に安心しました。
-特に、名門大学出身のコンサルタント（うちの子の担当はケンブリッチ大学院の方でした）がマンツーマンで教えてくれるので、本人のやる気にも繋がったようです。
-「準備してから行く」ことで、海外体験の質が何倍にもなることを、私自身が実感しました。`,
-    avatarUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070', // 仮のアバター
+    name: 'A.S',
+    age: '保護者',
+    text: '正解/不正解で成績を決める日本の教育に違和感を感じていましたが、海外留学をしたことで自分の意見や考えを尊重される環境でのびのびと成長し、卒業後は外資系企業で働いています。\n違いを受け入れ合う仲間たちとの出会いにも、本当に感謝しています。',
+    avatarUrl: './images/S__10854413.jpg',
+    rating: 5,
   },
 ];
 
-const Testimonial = ({ name, age, text, avatarUrl }: TestimonialProps) => {
+const Testimonial = ({ name, age, text, avatarUrl, rating }: TestimonialProps) => {
   return (
     <Box
       bg="white"
@@ -46,21 +45,30 @@ const Testimonial = ({ name, age, text, avatarUrl }: TestimonialProps) => {
       _hover={{ boxShadow: 'lg', transform: 'translateY(-5px)' }}
       transition="all 0.3s ease"
       height="100%"
+      display="flex"
+      flexDirection="column"
     >
-      <Flex direction="column" height="100%">
-        <Box mb={4}>
-          <Text fontSize="lg" fontStyle="italic" color="gray.600" whiteSpace="pre-line">
-            "{text}"
-          </Text>
+      <Flex align="center" mb={4}>
+        <Avatar src={avatarUrl} name={name} size="lg" mr={4} />
+        <Box>
+          <Text fontWeight="bold" fontSize="xl" color="brand.base">{name}</Text>
+          <Text fontSize="sm" color="gray.600">{age}</Text>
         </Box>
-        <Flex mt="auto" align="center">
-          <Avatar src={avatarUrl} size="md" mr={4} />
-          <Box>
-            <Text fontWeight="bold">{name}</Text>
-            <Text fontSize="sm" color="gray.500">{age}</Text>
-          </Box>
-        </Flex>
       </Flex>
+
+      {rating && (
+        <Flex mb={3}>
+          {Array(rating)
+            .fill(0)
+            .map((_, i) => (
+              <Icon key={i} as={FaStar} color="orange.400" w={5} h={5} />
+            ))}
+        </Flex>
+      )}
+
+      <Text fontSize="md" color="gray.700" whiteSpace="pre-line" flex="1">
+        {text}
+      </Text>
     </Box>
   );
 };
@@ -70,24 +78,16 @@ export const TestimonialSection = () => {
     <Box as="section" py={{ base: 12, md: 16 }} className="section">
       <Container maxW="container.xl">
         <VStack spacing={10} align="center">
-          <Box textAlign="center" maxW="container.md" mx="auto">
-            <Text
-              color="brand.accent"
-              fontWeight="bold"
-              fontSize="lg"
-              mb={3}
-            >
-              STUDENT STORIES
-            </Text>
-            <Heading as="h2" size="2xl" mb={5} color="brand.base">
-              体験談ピックアップ
+          <Box textAlign="center" maxW="3xl" mx="auto">
+            <Heading as="h2" size="2xl" mb={4} color="brand.base">
+              留学経験者からのメッセージ
             </Heading>
-            <Text fontSize="xl" color="gray.600" mb={8}>
-              留学を経験した学生たちの声をご紹介します
+            <Text fontSize="lg" color="gray.600" mb={10}>
+              海外体験や留学を経験した人たちのメッセージを紹介します。
             </Text>
           </Box>
 
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} width="full">
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8} width="full">
             {testimonials.map((testimonial, index) => (
               <Testimonial 
                 key={index} 
@@ -95,6 +95,7 @@ export const TestimonialSection = () => {
                 age={testimonial.age} 
                 text={testimonial.text} 
                 avatarUrl={testimonial.avatarUrl} 
+                rating={testimonial.rating}
               />
             ))}
           </SimpleGrid>
@@ -105,7 +106,7 @@ export const TestimonialSection = () => {
             size="lg"
             variant="outline"
             colorScheme="blue"
-            mt={6}
+            mt={8}
             _hover={{ bg: 'brand.light', transform: 'translateY(-2px)' }}
             transition="all 0.3s ease"
           >
