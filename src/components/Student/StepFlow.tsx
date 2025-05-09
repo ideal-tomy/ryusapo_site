@@ -64,7 +64,7 @@ const steps = [
   {
     step: 4,
     title: '出発前準備・オリエンテーション',
-    description: 'スタッフの少人数制で、一人一人に合わせたサポートを行います',
+    description: '1スタッフにつき生徒7名！小規模人数制で目が届く体制',
     icon: <Icon as={FaPlane} />
   },
   {
