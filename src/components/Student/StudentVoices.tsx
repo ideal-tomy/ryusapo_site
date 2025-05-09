@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Heading, Text, SimpleGrid, Flex, Avatar, VStack, Button, Badge } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, SimpleGrid, Flex, VStack, Button, Badge } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 
 type StudentVoiceProps = {
@@ -8,10 +8,9 @@ type StudentVoiceProps = {
   location: string;
   beforeText: string;
   afterText: string;
-  imageUrl: string;
 };
 
-const StudentVoice: React.FC<StudentVoiceProps> = ({ name, age, location, beforeText, afterText, imageUrl }) => {
+const StudentVoice: React.FC<StudentVoiceProps> = ({ name, age, location, beforeText, afterText }) => {
   return (
     <Box
       bg="white"
@@ -20,68 +19,64 @@ const StudentVoice: React.FC<StudentVoiceProps> = ({ name, age, location, before
       overflow="hidden"
       transition="transform 0.3s ease"
       _hover={{ transform: 'translateY(-5px)', boxShadow: 'lg' }}
+      height="100%"
+      display="flex"
+      flexDirection="column"
     >
-      <Flex direction={{ base: 'column', md: 'row' }}>
-        <Box flexShrink={0} width={{ base: '100%', md: '40%' }} height={{ base: '200px', md: 'auto' }}>
-          <Box
-            bgImage={`url(${imageUrl})`}
-            bgSize="cover"
-            bgPosition="center"
-            height="100%"
-            width="100%"
-          />
+      <VStack align="start" p={6} spacing={4} flex="1">
+        <Box>
+          <Heading as="h3" size="md" mb={1}>
+            {name}
+          </Heading>
+          <Text color="gray.500" fontSize="sm">
+            {age} | {location}
+          </Text>
         </Box>
-        <VStack align="start" p={6} spacing={4} flex="1">
-          <Box>
-            <Heading as="h3" size="md" mb={1}>
-              {name}
-            </Heading>
-            <Text color="gray.500" fontSize="sm">
-              {age} | {location}
-            </Text>
-          </Box>
+        
+        <Box w="100%">
+          <Badge colorScheme="red" mb={2}>Before</Badge>
+          <Text fontSize="sm" fontStyle="italic" color="gray.600" mb={4}>
+            "{beforeText}"
+          </Text>
           
-          <Box w="100%">
-            <Badge colorScheme="red" mb={2}>Before</Badge>
-            <Text fontSize="sm" fontStyle="italic" color="gray.600" mb={4}>
-              "{beforeText}"
-            </Text>
-            
-            <Badge colorScheme="green" mb={2}>After</Badge>
-            <Text fontSize="sm" fontStyle="italic" color="gray.600">
-              "{afterText}"
-            </Text>
-          </Box>
-        </VStack>
-      </Flex>
+          <Badge colorScheme="green" mb={2}>After</Badge>
+          <Text fontSize="sm" fontStyle="italic" color="gray.600">
+            "{afterText}"
+          </Text>
+        </Box>
+      </VStack>
     </Box>
   );
 };
 
-const studentVoices = [
+const studentVoices: StudentVoiceProps[] = [
   {
-    name: '山田 祐子',
-    age: '高校2年生',
-    location: 'カナダ・バンクーバー',
-    beforeText: '英語が苦手で、海外に行くなんて考えられませんでした。正直、最初は不安でいっぱいでした。',
-    afterText: '現地の人々の温かさに触れて、自信がつきました。英語が話せるようになった喜びは今でも忘れられません！',
-    imageUrl: 'https://images.unsplash.com/photo-1529111290557-82f6d5c6cf85?q=80&w=1339',
+    name: 'T.K',
+    age: '中学3年生',
+    location: 'アメリカ',
+    beforeText: '中学生まで勉強が苦手でスポーツばかりしていましたが、このままではマズイと思い留学を決めました。',
+    afterText: '英語が話せるようになったおかげで、大手外資系IT企業にも就職できたので、本当に人生を変える経験となりました。',
   },
   {
-    name: '佐藤 健太',
-    age: '大学1年生',
-    location: 'オーストラリア・シドニー',
-    beforeText: '将来について漠然とした不安があり、何か新しいことに挑戦したいと思っていました。',
-    afterText: 'ボランティア活動を通じて異文化理解の大切さを学び、将来の目標が明確になりました。この経験は一生の宝物です。',
-    imageUrl: 'https://images.unsplash.com/photo-1529111290557-82f6d5c6cf85?q=80&w=1339',
+    name: 'N.F',
+    age: 'UCLA卒業',
+    location: 'アメリカ',
+    beforeText: '高校の頃は英語が苦手で赤点ばかりだった私がUCLAに合格。',
+    afterText: '自力で学費を稼ぎながら必死に学び、気づけばネイティブと間違われるほど英語が上達。留学は大変だったけど、努力は絶対に裏切らない！',
   },
   {
-    name: '田中 美咲',
-    age: '高校3年生',
-    location: 'アメリカ・ボストン',
-    beforeText: '親元を離れて生活することに不安がありました。自分でできるか自信がありませんでした。',
-    afterText: '一人で問題を解決する力がついて、精神的に強くなりました。今では何でも挑戦できる自信があります！',
-    imageUrl: 'https://images.unsplash.com/photo-1529111290557-82f6d5c6cf85?q=80&w=1339',
+    name: 'M.K',
+    age: '学生',
+    location: '現地校',
+    beforeText: '中学までは周りの目を気にしすぎて人前で話すのが苦手でしたが、現地校でのプレゼンやディスカッションを通して自分の意見を持つことの大切さを学びました。',
+    afterText: '慣れるまでは辛いこともありましたが、友達のコミュニケーションが取れるようになった頃から、自分に自信が持てるようになりました。あの時、勇気を出して留学して本当によかったです！',
+  },
+  {
+    name: 'S.R',
+    age: '学生',
+    location: '海外大学',
+    beforeText: 'もともとは日本の大学に進学して交換留学で海外に行きたいなと思っていましたが、参加したサマーキャンプがきっかけで、海外の大学への進学を決意しました。',
+    afterText: '異なる価値観を持つ友達と一緒に学ぶことで、自分自身の視野が大きく広がりました。就職活動でも、大企業の方がこちらの学校に来て説明会をしてくれたり、その場で面接・内定をいただけて沢山の機会があることを実感しています。英語が話せると就職してからも即戦力になれるとのことなので、今からとっても楽しみです！',
   },
 ];
 
@@ -102,13 +97,13 @@ export const StudentVoices = () => {
             </Text>
           </Box>
 
-          <SimpleGrid columns={{ base: 1, lg: 3 }} spacing={8} width="full">
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} width="full">
             {studentVoices.map((voice, index) => (
               <StudentVoice key={index} {...voice} />
             ))}
           </SimpleGrid>
 
-          <Button
+          {/* <Button
             as={RouterLink}
             to="/voices"
             size="lg"
@@ -117,7 +112,7 @@ export const StudentVoices = () => {
             mt={4}
           >
             もっと体験談を見る
-          </Button>
+          </Button> */}
         </VStack>
       </Container>
     </Box>

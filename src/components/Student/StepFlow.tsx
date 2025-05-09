@@ -64,7 +64,7 @@ const steps = [
   {
     step: 4,
     title: '出発前準備・オリエンテーション',
-    description: '航空券の手配、海外保険の加入、ビザ申請のサポート、現地情報の提供など、出発前の準備を徹底サポート。出発前オリエンテーションも実施します。',
+    description: 'スタッフの少人数制で、一人一人に合わせたサポートを行います',
     icon: <Icon as={FaPlane} />
   },
   {
@@ -99,13 +99,13 @@ export const StepFlow = () => {
             </Text>
 
             <HStack spacing={4} mb={10} justify="center">
-              <Button colorScheme="blue" variant="solid" borderRadius="md" px={6} bg="#2b6cb0" _hover={{ bg: "#2b6cb0" }} color="white">
+              <Button colorScheme="blue" variant="solid" borderRadius="md" px={{ base: 4, md: 6 }} bg="#2b6cb0" _hover={{ bg: "#2b6cb0" }} color="white" fontSize={{ base: 'xs', md: 'md' }}>
                 サマーキャンプ
               </Button>
-              <Button colorScheme="blue" variant="solid" borderRadius="md" px={6} bg="#2b6cb0" _hover={{ bg: "#2b6cb0" }} color="white">
+              <Button colorScheme="blue" variant="solid" borderRadius="md" px={{ base: 4, md: 6 }} bg="#2b6cb0" _hover={{ bg: "#2b6cb0" }} color="white" fontSize={{ base: 'xs', md: 'md' }}>
                 現地校見学サポート
               </Button>
-              <Button colorScheme="blue" variant="solid" borderRadius="md" px={6} bg="#2b6cb0" _hover={{ bg: "#2b6cb0" }} color="white">
+              <Button colorScheme="blue" variant="solid" borderRadius="md" px={{ base: 4, md: 6 }} bg="#2b6cb0" _hover={{ bg: "#2b6cb0" }} color="white" fontSize={{ base: 'xs', md: 'md' }}>
                 志望校選び＆出願サポート
               </Button>
             </HStack>

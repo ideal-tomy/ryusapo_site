@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Heading, Text, Table, Thead, Tbody, Tr, Th, Td, VStack, Icon, Flex, Badge } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, Table, Thead, Tbody, Tr, Th, Td, VStack, Icon, Flex, Badge, useBreakpointValue, HStack } from '@chakra-ui/react';
 import { FaCheckCircle, FaTimesCircle, FaQuestionCircle } from 'react-icons/fa';
 
 type ComparisonItemProps = {
@@ -34,6 +34,8 @@ const StatusCell = ({ status, company }: { status: 'yes' | 'partial' | 'no', com
 };
 
 export const ComparisonTable = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
   const comparisonItems: ComparisonItemProps[] = [
     {
       feature: "24時間サポート体制",
@@ -102,39 +104,70 @@ export const ComparisonTable = () => {
             </Text>
           </Box>
           
-          <Box width="full" overflowX="auto">
-            <Table variant="simple" size="lg" bg="white" boxShadow="sm" borderRadius="lg" overflow="hidden">
-              <Thead bg="brand.base">
-                <Tr>
-                  <Th color="white" fontSize="md" width="30%">比較項目</Th>
-                  <Th color="white" fontSize="md" textAlign="center" width="23%">
-                    <Badge colorScheme="cyan" fontSize="md" p={1} borderRadius="md">
-                      留サポ
-                    </Badge>
-                  </Th>
-                  <Th color="white" fontSize="md" textAlign="center" width="23%">A社</Th>
-                  <Th color="white" fontSize="md" textAlign="center" width="23%">B社</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {comparisonItems.map((item, index) => (
-                  <Tr key={index}>
-                    <Td fontWeight="bold" verticalAlign="top">
-                      <VStack align="start" spacing={1}>
-                        <Text>{item.feature}</Text>
-                        {item.description && (
-                          <Text fontSize="sm" color="gray.600" whiteSpace="pre-line">{item.description}</Text>
-                        )}
+          {isMobile ? (
+            <VStack spacing={4} align="stretch" width="full">
+              {comparisonItems.map((item, index) => (
+                <Box key={index} p={4} borderWidth="1px" borderRadius="lg" bg="white" boxShadow="sm">
+                  <VStack align="start" spacing={2}>
+                    <Heading as="h4" size="sm" color="brand.base">{item.feature}</Heading>
+                    {item.description && (
+                      <Text fontSize="xs" color="gray.600" noOfLines={2} whiteSpace="pre-line">
+                        {item.description}
+                      </Text>
+                    )}
+                    <HStack spacing={4} pt={3} width="full" justify="space-around">
+                      <VStack spacing={1} align="center">
+                        <Text fontSize="xs" fontWeight="bold" color="gray.700">留サポ</Text>
+                        <StatusIcon status={item.ryusapo} />
                       </VStack>
-                    </Td>
-                    <StatusCell status={item.ryusapo} company="ryusapo" />
-                    <StatusCell status={item.companyA} company="companyA" />
-                    <StatusCell status={item.companyB} company="companyB" />
+                      <VStack spacing={1} align="center">
+                        <Text fontSize="xs" fontWeight="bold" color="gray.700">A社</Text>
+                        <StatusIcon status={item.companyA} />
+                      </VStack>
+                      <VStack spacing={1} align="center">
+                        <Text fontSize="xs" fontWeight="bold" color="gray.700">B社</Text>
+                        <StatusIcon status={item.companyB} />
+                      </VStack>
+                    </HStack>
+                  </VStack>
+                </Box>
+              ))}
+            </VStack>
+          ) : (
+            <Box width="full" overflowX="auto">
+              <Table variant="simple" size="lg" bg="white" boxShadow="sm" borderRadius="lg" overflow="hidden">
+                <Thead bg="brand.base">
+                  <Tr>
+                    <Th color="white" fontSize="md" width="30%">比較項目</Th>
+                    <Th color="white" fontSize="md" textAlign="center" width="23%">
+                      <Badge colorScheme="cyan" fontSize="md" p={1} borderRadius="md">
+                        留サポ
+                      </Badge>
+                    </Th>
+                    <Th color="white" fontSize="md" textAlign="center" width="23%">A社</Th>
+                    <Th color="white" fontSize="md" textAlign="center" width="23%">B社</Th>
                   </Tr>
-                ))}
-              </Tbody>
-            </Table>
-          </Box>
+                </Thead>
+                <Tbody>
+                  {comparisonItems.map((item, index) => (
+                    <Tr key={index}>
+                      <Td fontWeight="bold" verticalAlign="top">
+                        <VStack align="start" spacing={1}>
+                          <Text>{item.feature}</Text>
+                          {item.description && (
+                            <Text fontSize="sm" color="gray.600" whiteSpace="pre-line">{item.description}</Text>
+                          )}
+                        </VStack>
+                      </Td>
+                      <StatusCell status={item.ryusapo} company="ryusapo" />
+                      <StatusCell status={item.companyA} company="companyA" />
+                      <StatusCell status={item.companyB} company="companyB" />
+                    </Tr>
+                  ))}
+                </Tbody>
+              </Table>
+            </Box>
+          )}
 
           <Box pt={10} textAlign="center" w="full">
             <Heading as="h3" size="lg" color="brand.base" mb={4}>
