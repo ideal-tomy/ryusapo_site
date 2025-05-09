@@ -69,10 +69,12 @@ export const ServiceSection = () => {
               <Text color="gray.600" mb={4}>
               ハワイでの5泊7日。午前は五感で自然に触れる「心の教育」、午後は現地の社会課題をテーマに英語でプレゼン研修。初めての海外でも安心。楽しみながら、思考力・表現力・英語力が自然と育つ体験型プログラム。
               </Text>
-              <Text fontWeight="bold" color="brand.base">
-              A日程：2025年8月4〜8日
-              B日程：2025年8月11〜15日
-              </Text>
+              <Box fontWeight="bold" color="brand.base">
+                <Text as="span">期間：A日程：2025年8月4〜8日</Text>
+                <Box as="span" display="block" pl="calc(2em + 16px)"> {/* 0.5chの加算を一旦削除 */}
+                  B日程：2025年8月11〜15日
+                </Box>
+              </Box>
             </Flex>
 
             {/* サマーキャンプ */}

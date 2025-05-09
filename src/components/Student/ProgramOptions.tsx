@@ -11,6 +11,10 @@ type ProgramCardProps = {
 };
 
 const ProgramCard: React.FC<ProgramCardProps> = ({ title, description, duration, icon }) => {
+  const durationParts = duration.split('\n');
+  const partA = durationParts[0];
+  const partB = durationParts.length > 1 ? durationParts[1] : null;
+
   return (
     <Box
       bg="white"
@@ -42,9 +46,14 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ title, description, duration,
         <Text color="gray.600" mb={4} flex="1">
           {description}
         </Text>
-        <Text fontWeight="bold" color="brand.base">
-          期間: {duration}
-        </Text>
+        <Box fontWeight="bold" color="brand.base">
+          <Text as="span">期間: {partA}</Text>
+          {partB && (
+            <Box as="span" display="block" pl="2.6em">
+              {partB}
+            </Box>
+          )}
+        </Box>
       </Flex>
     </Box>
   );
@@ -54,7 +63,7 @@ const programs = [
   {
     title: 'サマーキャンプ',
     description: 'ハワイで過ごす5泊7日の短期プログラム。午前は自然体験で心を整え、午後は英語で社会課題を探究しプレゼン発表。楽しさと本格的な学びが両立する"自分を変えるきっかけ"になる体験です。',
-    duration: 'A日程：2025年8月4〜8日 B日程：2025年8月11〜15日',
+    duration: 'A日程：2025年8月4〜8日\nB日程：2025年8月11〜15日',
     icon: <Icon as={FaCampground} w={6} h={6} />
   },
   {
