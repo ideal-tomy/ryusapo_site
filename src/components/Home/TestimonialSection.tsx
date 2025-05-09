@@ -33,6 +33,27 @@ const testimonials: TestimonialProps[] = [
     avatarUrl: './images/S__10854413.jpg',
     rating: 5,
   },
+  {
+    name: 'M.K',
+    age: '学生',
+    text: '中学までは周りの目を気にしすぎて人前で話すのが苦手でしたが、現地校でのプレゼンやディスカッションを通して自分の意見を持つことの大切さを学びました。慣れるまでは辛いこともありましたが、友達のコミュニケーションが取れるようになった頃から、自分に自信が持てるようになりました。\nあの時、勇気を出して留学して本当によかったです！',
+    avatarUrl: './images/new_student01.jpg', // 仮の画像パス
+    rating: 5,
+  },
+  {
+    name: 'S.R',
+    age: '学生',
+    text: 'もともとは日本の大学に進学して交換留学で海外に行きたいなと思っていましたが、参加したサマーキャンプがきっかけで、海外の大学への進学を決意しました。\n異なる価値観を持つ友達と一緒に学ぶことで、自分自身の視野が大きく広がりました。\n就職活動でも、大企業の方がこちらの学校に来て説明会をしてくれたり、その場で面接・内定をいただけて沢山の機会があることを実感しています。英語が話せると就職してからも即戦力になれるとのことなので、今からとっても楽しみです！',
+    avatarUrl: './images/new_student02.jpg', // 仮の画像パス
+    rating: 5,
+  },
+  {
+    name: 'Y.H',
+    age: '保護者',
+    text: '得意・不得意の教科の差が激しく、日本の学校の定期テストや模試の成績はまちまちでした。しかし海外ではある領域がずば抜けて得意な方が評価されるため、留学へ行ってからは本人も楽しそうでした。\n一人娘なので心配でしたが、「離れている時間が子どもを成長させる」というモンテッソーリ教育の考え方を自分に言い聞かせていました。\n時々していたビデオ電話で娘の顔つきが変わっていくことに気づき、留学へ行かせて本当に良かったなと思いました。',
+    avatarUrl: './images/new_parent01.jpg', // 仮の画像パス
+    rating: 5,
+  },
 ];
 
 const Testimonial = ({ name, age, text, avatarUrl, rating }: TestimonialProps) => {
@@ -100,7 +121,7 @@ export const TestimonialSection = () => {
             ))}
           </SimpleGrid>
 
-          <Button
+          {/* <Button
             as={RouterLink}
             to="/voices"
             size="lg"
@@ -111,7 +132,7 @@ export const TestimonialSection = () => {
             transition="all 0.3s ease"
           >
             もっと体験談を見る
-          </Button>
+          </Button> */}
         </VStack>
       </Container>
     </Box>

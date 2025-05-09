@@ -82,7 +82,12 @@ export const StepFlow = () => {
     <Box as="section" py={{ base: 12, md: 16 }} bg="gray.50" className="section">
       <Container maxW="container.xl">
         <VStack spacing={10} align="center">
-          <Box textAlign="center" maxW="container.md" mx="auto">
+          <Box 
+            textAlign="center" 
+            maxW={{ base: "full", md: "container.md" }}
+            mx="auto" 
+            px={isMobile ? 4 : 0}
+          >
             <Text color="gray.400" fontWeight="bold" fontSize="lg" mb={3}>
               APPLICATION PROCESS
             </Text>

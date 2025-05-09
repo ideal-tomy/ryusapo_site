@@ -10,7 +10,10 @@ export const LearningApproachSection = () => {
           {/* タイトルと導入文 */}
           <Box textAlign="center">
             <Heading as="h2" size="xl" mb={4} color="brand.base">
-              留サポが提供する、<Text as="span" color="brand.accent">未来を拓く学びのかたち</Text>
+              留サポが提供する、<Text as="span" color="brand.accent" sx={{
+                WebkitTextStroke: '1px #8B4513', // Safari, Chrome
+                textStroke: '1px #8B4513'       // 将来的な標準プロパティ
+              }}>未来を拓く学びのかたち</Text>
             </Heading>
             <Text fontSize="lg" color="gray.600" maxW="container.md" mx="auto">
               子どもが自ら選び、自ら動き、自ら人生を切り拓いていく——。
@@ -78,7 +81,10 @@ export const LearningApproachSection = () => {
             <Box textAlign="center" pb={8}> {/* 上のpyがあるので、ここはpbのみに調整 */}
               <Heading as="h2" size="xl" color="brand.base">
                 {'どんな色にも染まれる'}
-                <Text as="span" color="brand.accent" display="inline">
+                <Text as="span" color="brand.accent" display="inline" sx={{
+                  WebkitTextStroke: '0.5px #8B4513', // 少し細めの枠線
+                  textStroke: '0.5px #8B4513'
+                }}>
                   10代
                 </Text>
                 {'のうちに、多様性に触れよう'}
@@ -90,7 +96,10 @@ export const LearningApproachSection = () => {
               <Box>
                 <Heading as="h3" size="lg" mb={3} color="brand.base">
                   <Icon as={FaGlobeAsia} mr={2} verticalAlign="middle" />
-                  <Text as="span" color="brand.accent">真のグローバル人材</Text>を育てる、思春期からの海外経験
+                  <Text as="span" color="brand.accent" sx={{
+                    WebkitTextStroke: '1px #8B4513',
+                    textStroke: '1px #8B4513'
+                  }}>真のグローバル人材</Text>を育てる、思春期からの海外経験
                 </Heading>
                 <Text color="gray.700" pl={10}> {/* アイコン分インデント */}
                   「Multi Cultureな人材」は、思春期・青年期の海外経験からこそ育まれます。
@@ -110,7 +119,10 @@ export const LearningApproachSection = () => {
                     <Text as="span" color="brand.base" display="inline">
                       {"\"周囲との差\"ではなく、"}
                     </Text>
-                    <Text as="span" color="brand.accent" display="inline">
+                    <Text as="span" color="brand.accent" display="inline" sx={{
+                      WebkitTextStroke: '1px #8B4513',
+                      textStroke: '1px #8B4513'
+                    }}>
                       "未来を創る力"
                     </Text>
                     <Text as="span" color="brand.base" display="inline">
