@@ -11,6 +11,7 @@ import { FaqPreview, servicePageFaqs, FaqItem } from '../../components/common/Fa
 // import { SupportList } from '../../components/Services/SupportList';
 // import { OptionServices } from '../../components/Services/OptionServices';
 import { ComparisonTable } from '../../components/Services/ComparisonTable';
+import { PricingTable } from '../../components/Services/PricingTable';
 
 export const ServicesPage = () => {
   return (
@@ -35,6 +36,9 @@ export const ServicesPage = () => {
       
       {/* 5. 他社との違い（比較表） */}
       <ComparisonTable />
+
+      {/* 新しい料金一覧セクション */}
+      <PricingTable />
       
       {/* 6. よくある質問（導線） */}
       <FaqPreview 
