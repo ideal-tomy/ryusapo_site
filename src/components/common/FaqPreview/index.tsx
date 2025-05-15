@@ -210,12 +210,12 @@ export const FaqPreview: React.FC<FaqPreviewProps> = ({
           <Flex justify="center" mt={6}>
             <Button
               as={RouterLink}
-              to="/services"
+              to="/about"
               size="lg"
               variant="outline"
-              colorScheme="blue"
+              colorScheme="brand"
             >
-              サポート・料金
+              会社概要を見る
             </Button>
           </Flex>
         </VStack>

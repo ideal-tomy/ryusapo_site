@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Container, Heading, Text, Button, VStack } from '@chakra-ui/react';
+// import { Link as RouterLink } from 'react-router-dom'; // This was added in error, removing if not used elsewhere
 
 type MainCTAProps = {
   // LINEボタンのURLを変更するためのプロパティ
@@ -34,20 +35,21 @@ export const MainCTA = ({
           </Text>
           
           <Button
-            as="a"
-            href={lineUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            as="a" // Reverted to "a"
+            href={lineUrl} // Reverted to lineUrl
+            target="_blank" // Re-added for external links
+            rel="noopener noreferrer" // Re-added for security
             size="lg"
             px={10}
-            py={6}
-            bg="#06c755"
-            color="white"
+            py={6} // Reverted py
+            bg="#06c755" // Reverted to LINE green
+            color="white" // Reverted
             fontWeight="bold"
-            _hover={{ bg: '#05a948', transform: 'translateY(-2px)' }}
-            _active={{ bg: '#048b3a' }}
-            transition="all 0.3s ease"
+            _hover={{ bg: '#05a948', transform: 'translateY(-2px)' }} // Reverted hover
+            _active={{ bg: '#048b3a' }} // Reverted active
+            transition="all 0.3s ease" // Reverted transition
             boxShadow="md"
+            // _hover={{ boxShadow: "lg", transform: "translateY(-2px)" }} // Removed as it was for RouterLink style
           >
             {buttonText}
           </Button>

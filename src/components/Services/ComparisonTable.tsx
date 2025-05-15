@@ -92,14 +92,14 @@ export const ComparisonTable = () => {
     <Box as="section" py={12} bg="gray.50">
       <Container maxW="container.xl">
         <VStack spacing={8} align="start">
-          <Box>
+          <Box textAlign="center" w="full">
             <Text color="brand.accent" fontWeight="bold" fontSize="lg">
               COMPARISON
             </Text>
             <Heading as="h2" size="xl" color="brand.base" mb={2}>
               留サポの強み
             </Heading>
-            <Text fontSize="lg" color="gray.600" maxW="2xl">
+            <Text fontSize="lg" color="gray.600" maxW="2xl" mx="auto">
               他社サービスとの比較で見る留サポの特徴
             </Text>
           </Box>
