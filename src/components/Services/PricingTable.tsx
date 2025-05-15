@@ -8,67 +8,85 @@ interface PriceItem {
   price1Month?: string;
   price2Weeks?: string;
   highlight?: boolean;
+  planCategory: 'package' | 'spot';
 }
 
 const pricingData: PriceItem[] = [
   {
-    serviceName: '志望校選び＋出願サポート\n＋入学手続きフルサポートセット',
-    price3Months: '¥4,480',
-    price2Months: '¥4,980',
-    price1Month: '¥5,980',
+    serviceName: 'フルサポートセット\n　志望校選び・出願サポート\n・入学手続きフルサポートセット',
+    price3Months: '＄4,480',
+    price2Months: '＄4,980',
+    price1Month: '＄5,980',
+    planCategory: 'package',
   },
   {
-    serviceName: '出願サポート\n＋入学手続きサポートセット',
-    price3Months: '¥1,980',
-    price2Months: '¥2,480',
-    price1Month: '¥2,980',
+    serviceName: '入学準備セット\n　出願サポート\n・入学手続きサポートセット',
+    price3Months: '＄1,980',
+    price2Months: '＄2,480',
+    price1Month: '＄2,980',
     highlight: true,
+    planCategory: 'package',
   },
   {
     serviceName: '志望校選びサポート',
-    price3Months: '¥2,200',
-    price2Months: '¥2,650',
-    price1Month: '¥3,200',
-    price2Weeks: '¥3,980',
+    price3Months: '＄2,200',
+    price2Months: '＄2,650',
+    price1Month: '＄3,200',
+    price2Weeks: '＄3,980',
+    planCategory: 'spot',
   },
   {
     serviceName: '出願サポート',
-    price3Months: '¥980',
-    price2Months: '¥1,280',
-    price1Month: '¥1,480',
-    price2Weeks: '¥1,980',
+    price3Months: '＄980',
+    price2Months: '＄1,280',
+    price1Month: '＄1,480',
+    price2Weeks: '＄1,980',
+    planCategory: 'spot',
   },
   {
     serviceName: '入学手続きサポート',
-    price3Months: '¥1,480',
-    price2Months: '¥1,780',
-    price1Month: '¥1,980',
-    price2Weeks: '¥2,980',
+    price3Months: '＄1,480',
+    price2Months: '＄1,780',
+    price1Month: '＄1,980',
+    price2Weeks: '＄2,980',
+    planCategory: 'spot',
   },
 ];
+
+const planCategoryLabels = {
+  package: 'パッケージ\nプラン',
+  spot: 'スポット\nプラン',
+};
 
 export const PricingTable = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const tableSize = useBreakpointValue({ base: 'sm', md: 'md' });
+  
   const commonThProps = {
     py: isMobile ? 3 : 4,
-    px: isMobile ? 2 : 4,
-    borderColor: "gray.300",
+    px: isMobile ? 2 : 3,
+    borderColor: "gray.300", 
     borderRightWidth: "1px",
     color: "gray.700",
     fontSize: isMobile ? "xs" : "sm",
     textAlign: "center" as const,
     fontWeight: "bold",
+    verticalAlign: "middle",
   };
   const commonTdProps = {
     py: isMobile ? 3 : 4,
-    px: isMobile ? 2 : 4,
-    borderColor: "gray.300",
+    px: isMobile ? 2 : 3,
+    borderColor: "gray.300", 
     borderRightWidth: "1px",
     textAlign: "center" as const,
     fontSize: isMobile ? "sm" : "md",
     fontWeight: "bold",
+    verticalAlign: "middle",
   };
+
+  const categoryColWidth = isMobile ? "80px" : "15%";
+  const serviceNameColWidth = isMobile ? "120px" : "25%";
+  const priceColWidth = isMobile ? "auto" : "15%";
 
   return (
     <Box as="section" py={12} bg="white">
@@ -87,51 +105,124 @@ export const PricingTable = () => {
             <Table variant="simple" size={tableSize} borderWidth="1px" borderColor="gray.300" borderRadius="lg" boxShadow="md">
               <Thead bg="gray.100">
                 <Tr>
-                  <Th {...commonThProps} rowSpan={2} width={isMobile ? "120px" : "30%"} verticalAlign="middle" borderRightWidth="1px">サービス内容</Th>
-                  <Th {...commonThProps} colSpan={1} width={isMobile ? "auto" : "17.5%"} borderRightWidth="1px">料金</Th>
-                  <Th {...commonThProps} colSpan={3} width={isMobile ? "auto" : "52.5%"} borderRightWidth="0px">
+                  <Th {...commonThProps} rowSpan={2} width={categoryColWidth}>プラン種別</Th>
+                  <Th {...commonThProps} rowSpan={2} width={serviceNameColWidth}>サービス内容</Th>
+                  <Th {...commonThProps} colSpan={1} width={priceColWidth}>料金</Th>
+                  <Th {...commonThProps} colSpan={3} width={isMobile ? "auto" : `calc(${priceColWidth} * 3)`} borderRightWidth="0px"> 
                     Fast Pass (お急ぎプラン)
                   </Th>
                 </Tr>
                 <Tr>
-                  <Th {...commonThProps} width={isMobile ? "auto" : "17.5%"} borderRightWidth="1px">3ヶ月前〜</Th>
-                  <Th {...commonThProps} width={isMobile ? "auto" : "17.5%"} borderRightWidth="1px">2ヶ月前</Th>
-                  <Th {...commonThProps} width={isMobile ? "auto" : "17.5%"} borderRightWidth="1px">1ヶ月前</Th>
-                  <Th {...commonThProps} width={isMobile ? "auto" : "17.5%"} borderRightWidth="0px">2週間前</Th>
+                  <Th {...commonThProps} width={priceColWidth}>～3ヶ月前</Th>
+                  <Th {...commonThProps} width={priceColWidth}>2ヶ月前</Th>
+                  <Th {...commonThProps} width={priceColWidth}>1ヶ月前</Th>
+                  <Th {...commonThProps} width={priceColWidth} borderRightWidth="0px">2週間前</Th> 
                 </Tr>
               </Thead>
               <Tbody>
-                {pricingData.map((item, index) => (
-                  <Tr key={index} bg={item.highlight ? 'blue.50' : 'white'} _hover={{ bg: item.highlight ? 'blue.100' : 'gray.50' }}>
-                    <Td 
-                      py={isMobile ? 3 : 4} 
-                      px={isMobile ? 2 : 4} 
-                      borderColor="gray.300" 
-                      borderRightWidth="1px"
-                      fontWeight={item.highlight ? "extrabold" : "medium"} 
-                      color={item.highlight ? "blue.700" : "gray.700"}
-                      fontSize={isMobile ? (item.highlight ? "sm" : "xs") : (item.highlight ? "lg" : "md")}
-                      whiteSpace="pre-line"
-                      width={isMobile ? "120px" : "30%"}
-                      textAlign="left"
-                      lineHeight={isMobile ? "short" : "base"}
-                    >
-                      {item.serviceName}
-                    </Td>
-                    <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={isMobile ? "auto" : "17.5%"}>{item.price3Months || '-'}</Td>
-                    <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={isMobile ? "auto" : "17.5%"}>{item.price2Months || '-'}</Td>
-                    <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={isMobile ? "auto" : "17.5%"}>{item.price1Month || '-'}</Td>
-                    <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={isMobile ? "auto" : "17.5%"} borderRightWidth="0px">
-                      {item.price2Weeks ? item.price2Weeks : (item.serviceName.includes('フルサポート') || item.serviceName.includes('＋入学手続きサポートセット')) && index < 2 ? 
-                        <Box w="full" h="full" display="flex" alignItems="center" justifyContent="center">
-                          <svg width="80%" height="30px" viewBox="0 0 100 50" preserveAspectRatio="none" style={{ display: 'block', margin: 'auto' }}>
-                            <line x1="0" y1="50" x2="100" y2="0" stroke="lightgray" strokeWidth="2" />
-                          </svg>
-                        </Box>
-                        : '-'}
-                    </Td>
-                  </Tr>
-                ))}
+                {pricingData.map((item, index) => {
+                  const isFirstInCategory = index === 0 || pricingData[index - 1].planCategory !== item.planCategory;
+                  let categoryRowSpan = 0;
+                  if (isFirstInCategory) {
+                    categoryRowSpan = 1;
+                    for (let i = index + 1; i < pricingData.length; i++) {
+                      if (pricingData[i].planCategory === item.planCategory) {
+                        categoryRowSpan++;
+                      } else {
+                        break;
+                      }
+                    }
+                  }
+
+                  return (
+                    <Tr key={index} bg={item.highlight ? 'blue.50' : 'white'} _hover={{ bg: item.highlight ? 'blue.100' : 'gray.50' }}>
+                      {isFirstInCategory && (
+                        <Td
+                          rowSpan={categoryRowSpan}
+                          borderColor="gray.300"
+                          borderRightWidth="1px"
+                          bg="blue.50" 
+                          textAlign="center"
+                          verticalAlign="middle"
+                          px={isMobile ? 1 : 2}
+                          py={isMobile ? 2 : 4}
+                          fontSize={isMobile ? "sm" : "lg"}
+                          fontWeight="bold"
+                          color="blue.700"
+                          whiteSpace="pre-line"
+                          width={categoryColWidth}
+                        >
+                          {planCategoryLabels[item.planCategory]}
+                        </Td>
+                      )}
+                      <Td 
+                        py={isMobile ? 3 : 4} 
+                        px={isMobile ? 2 : 3} 
+                        borderColor="gray.300" 
+                        borderRightWidth="1px"
+                        fontWeight={item.highlight ? "extrabold" : "medium"} 
+                        color={item.highlight ? "blue.700" : "gray.700"}
+                        fontSize={isMobile ? (item.highlight ? "sm" : "xs") : (item.highlight ? "lg" : "md")} 
+                        width={serviceNameColWidth}
+                        textAlign="center"
+                        verticalAlign="middle"
+                      >
+                        {(() => {
+                          const serviceNameParts = item.serviceName.split('\n');
+                          const serviceTitle = serviceNameParts[0];
+                          const serviceDescription = serviceNameParts.slice(1).join('\n');
+
+                          if (item.planCategory === 'package' && serviceDescription) {
+                            const titleFontSize = item.highlight ? (isMobile ? "md" : "xl") : (isMobile ? "sm" : "lg");
+                            const titleFontWeight = item.highlight ? "extrabold" : "bold";
+                            const titleColor = item.highlight ? "blue.700" : "gray.800"; 
+
+                            const descFontSize = item.highlight ? (isMobile ? "sm" : "md") : (isMobile ? "xs" : "sm");
+                            const descFontWeight = "normal";
+                            const descColor = item.highlight ? "blue.700" : "gray.600";
+
+                            return (
+                              <VStack align="center" spacing={0} width="full">
+                                <Text fontSize={titleFontSize} fontWeight={titleFontWeight} color={titleColor} lineHeight="shorter" mb={isMobile ? 0.5 : 1}>
+                                  {serviceTitle}
+                                </Text>
+                                <Text fontSize={descFontSize} fontWeight={descFontWeight} color={descColor} whiteSpace="pre-line" lineHeight="tight">
+                                  {serviceDescription}
+                                </Text>
+                              </VStack>
+                            );
+                          } else {
+                            let fontSizeForSpotMobile;
+                            if (isMobile && item.planCategory === 'spot') {
+                              fontSizeForSpotMobile = "11px";
+                            } else {
+                              fontSizeForSpotMobile = isMobile ? (item.highlight ? "sm" : "xs") : (item.highlight ? "lg" : "md");
+                            }
+                            const defaultFontWeight = item.highlight ? "extrabold" : "medium";
+                            const defaultColor = item.highlight ? "blue.700" : "gray.700";
+                            return (
+                              <Text fontSize={fontSizeForSpotMobile} fontWeight={defaultFontWeight} color={defaultColor} whiteSpace="pre-line">
+                                {item.serviceName}
+                              </Text>
+                            );
+                          }
+                        })()}
+                      </Td>
+                      <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={priceColWidth}>{item.price3Months || '-'}</Td>
+                      <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={priceColWidth}>{item.price2Months || '-'}</Td>
+                      <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={priceColWidth}>{item.price1Month || '-'}</Td>
+                      <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={priceColWidth} borderRightWidth="0px"> 
+                        {item.price2Weeks ? item.price2Weeks : (item.serviceName.includes('フルサポート') || item.serviceName.includes('＋入学手続きサポートセット')) && (item.planCategory === 'package') ? 
+                          <Box w="full" h="full" display="flex" alignItems="center" justifyContent="center">
+                            <svg width="80%" height="30px" viewBox="0 0 100 50" preserveAspectRatio="none" style={{ display: 'block', margin: 'auto' }}>
+                              <line x1="0" y1="50" x2="100" y2="0" stroke="lightgray" strokeWidth="2" />
+                            </svg>
+                          </Box>
+                          : '-'}
+                      </Td>
+                    </Tr>
+                  );
+                })}
               </Tbody>
             </Table>
           </Box>
