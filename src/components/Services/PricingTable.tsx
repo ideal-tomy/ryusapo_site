@@ -13,14 +13,14 @@ interface PriceItem {
 
 const pricingData: PriceItem[] = [
   {
-    serviceName: 'フルサポートセット\n　志望校選び・出願サポート\n・入学手続きフルサポートセット',
+    serviceName: 'フルサポートセット\n・志望校選び・出願サポート\n・入学手続きサポート',
     price3Months: '＄4,480',
     price2Months: '＄4,980',
     price1Month: '＄5,980',
     planCategory: 'package',
   },
   {
-    serviceName: '入学準備セット\n　出願サポート\n・入学手続きサポートセット',
+    serviceName: '入学準備セット\n・出願サポート\n・入学手続きサポート',
     price3Months: '＄1,980',
     price2Months: '＄2,480',
     price1Month: '＄2,980',
@@ -212,7 +212,8 @@ export const PricingTable = () => {
                       <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={priceColWidth}>{item.price2Months || '-'}</Td>
                       <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={priceColWidth}>{item.price1Month || '-'}</Td>
                       <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={priceColWidth} borderRightWidth="0px"> 
-                        {item.price2Weeks ? item.price2Weeks : (item.serviceName.includes('フルサポート') || item.serviceName.includes('＋入学手続きサポートセット')) && (item.planCategory === 'package') ? 
+                        {item.price2Weeks ? item.price2Weeks : 
+                          (item.serviceName.includes('＋入学手続きサポートセット')) && (item.planCategory === 'package') ?
                           <Box w="full" h="full" display="flex" alignItems="center" justifyContent="center">
                             <svg width="80%" height="30px" viewBox="0 0 100 50" preserveAspectRatio="none" style={{ display: 'block', margin: 'auto' }}>
                               <line x1="0" y1="50" x2="100" y2="0" stroke="lightgray" strokeWidth="2" />

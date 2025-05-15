@@ -101,9 +101,6 @@ export const SupportTimeline = () => {
             </Stack>
           </Box>
 
-          {/* 「LINEサポートでいつでも相談」Boxの直前に画像を追加 */}
-          <Image src={students01Image} alt="サポート体制イメージ" mb={4} />
-
           <Box
             bg="brand.light"
             p={8}
