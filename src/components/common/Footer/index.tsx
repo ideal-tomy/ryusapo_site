@@ -1,8 +1,6 @@
 import React from 'react';
-import { Box, Container, Stack, SimpleGrid, Text, Link, Image } from '@chakra-ui/react';
+import { Box, Container, Stack, SimpleGrid, Text, Link, Image, VStack, HStack } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
-
-import footerLogoImage from '../../../assets/images/footerlogo02.jpg';
 
 // フッターに表示するリンクカテゴリー
 export const Footer = () => {
@@ -19,11 +17,11 @@ export const Footer = () => {
           <Stack spacing={6} align={{ base: 'center', md: 'flex-start' }}>
             <Box>
               <Image
-                src={footerLogoImage}
+                src="/images/footerlogo02.jpg"
                 alt="留サポ"
                 height="50px"
                 fallbackSrc="https://via.placeholder.com/150x50?text=留サポ"
-                // filter="brightness(0) invert(1)" // 一時的にコメントアウトして確認
+                display={{ base: 'none', md: 'block' }}
               />
             </Box>
             <Text fontSize="sm">

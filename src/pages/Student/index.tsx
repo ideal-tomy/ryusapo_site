@@ -11,6 +11,7 @@ import { ProgramOptions } from '../../components/Student/ProgramOptions';
 import { SupportTimeline } from '../../components/Student/SupportTimeline';
 import { StudentVoices } from '../../components/Student/StudentVoices';
 import { StepFlow } from '../../components/Student/StepFlow';
+import { StudentThoughtsSection } from '../../components/Student/StudentThoughtsSection';
 
 export const StudentPage = () => {
   return (
@@ -39,6 +40,9 @@ export const StudentPage = () => {
       
       {/* 3. サポート体制紹介 */}
       <SupportTimeline />
+      
+      {/* 新しいセクションの挿入 */}
+      <StudentThoughtsSection />
       
       {/* 4. 体験談・声 */}
       <StudentVoices />
