@@ -60,7 +60,7 @@ const supportSteps = [
   }
 ];
 
-export const SupportTimeline = () => {
+export const SupportTimeline: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return (
     <Box as="section" py={{ base: 12, md: 16 }} className="section">
       <Container maxW="container.xl">
@@ -100,6 +100,8 @@ export const SupportTimeline = () => {
               ))}
             </Stack>
           </Box>
+
+          {children}
 
           <Box
             bg="brand.light"

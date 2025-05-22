@@ -39,10 +39,9 @@ export const StudentPage = () => {
       <ProgramOptions />
       
       {/* 3. サポート体制紹介 */}
-      <SupportTimeline />
-      
-      {/* 新しいセクションの挿入 */}
-      <StudentThoughtsSection />
+      <SupportTimeline>
+        <StudentThoughtsSection />
+      </SupportTimeline>
       
       {/* 4. 体験談・声 */}
       <StudentVoices />
