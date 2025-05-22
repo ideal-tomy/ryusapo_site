@@ -25,7 +25,7 @@ export const Footer = () => {
               />
             </Box>
             <Text fontSize="sm">
-              世界は、思ったより近い
+              世界は、思ったより近い。
             </Text>
           </Stack>
 

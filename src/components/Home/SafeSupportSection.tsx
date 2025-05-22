@@ -14,14 +14,7 @@ export const SafeSupportSection = () => {
             一番大切なスタッフは全員、海外大学出身者または留学経験者。プログラムはすべて、安全・信頼・実績を重視した体制で運営されています。
           </Text>
 
-          <SimpleGrid columns={{ base: 1, md: 4 }} spacing={6} mb={6}>
-            <VStack bg="white" p={5} borderRadius="md" boxShadow="sm" textAlign="center">
-              <Icon as={FaUserFriends} w={10} h={10} color="brand.accent" />
-              <Heading as="h4" size="md" color="brand.base">出発前オリエンテーション</Heading>
-              <Text fontSize="sm" color="gray.500">1スタッフにつき生徒7名！
-小規模人数制で目が行き届く体制
-</Text>
-            </VStack>
+          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6} mb={6}>
             <VStack bg="white" p={5} borderRadius="md" boxShadow="sm" textAlign="center">
               <Icon as={FaHeadset} w={10} h={10} color="brand.accent" />
               <Heading as="h4" size="md" color="brand.base">全員が、海外大卒業の日本人スタッフ！
