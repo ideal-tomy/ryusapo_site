@@ -603,6 +603,99 @@ const ServiceDetailPage = () => {
             </Box>
           </Box>
         </VStack>
+        <Box mt={24} mb={16}>
+          <Heading as="h2" size={{ base: 'lg', md: '2xl' }} color="blue.700" textAlign="center" fontWeight="extrabold" mb={8} letterSpacing="wide">
+            留学って、いつから検討すればいいの？
+          </Heading>
+          <Box mb={8}>
+            <Text fontSize={{ base: 'md', md: '28px' }} color="gray.700" mb={4}>
+              「高校2年になってから、なんとなく"このままでいいのか？"と感じるようになった」<br />
+              「留学もありかもしれないけど、どう調べて、どう判断すればいいのか分からない」
+            </Text>
+            <Text fontSize={{ base: 'md', md: '28px' }} color="gray.700" mb={4}>
+              そんな声をたくさん聞きます。
+            </Text>
+            <Heading as="h3" size={{ base: 'md', md: 'xl' }} color="blue.600" fontWeight="bold" mb={4}>
+              実は、留学は"間に合わなくなる"のが早い。
+            </Heading>
+            <Text fontSize={{ base: 'md', md: '28px' }} color="gray.700" mb={4}>
+              特に正規留学（高校・大学）を検討する場合、<br />
+              <b>出願の1年前には志望校を決めて準備を始める必要がある</b>ため、<br />
+              「2年生の終わり頃」には大まかな方向性を持っているのが理想です。
+            </Text>
+            <Text fontSize={{ base: 'md', md: '28px' }} color="gray.700" mb={4}>
+              出願直前で焦るより、<br />
+              <b>時間をかけて"納得できる選択"をする方が、将来の満足度は圧倒的に高い。</b>
+            </Text>
+          </Box>
+          <Divider borderColor="gray.200" borderWidth={1} my={8} />
+          <Box bg="blue.50" borderRadius="2xl" boxShadow="lg" px={{ base: 4, md: 10 }} py={{ base: 6, md: 10 }} mb={12} borderLeft="8px solid #3182ce">
+            <Heading as="h3" size={{ base: 'md', md: 'xl' }} color="blue.700" fontWeight="extrabold" mb={4}>
+              だからこそ、私たちは"相談だけでも早めに"をおすすめします。
+            </Heading>
+            <List spacing={2} mb={4} color="blue.800" fontWeight="semibold" fontSize={{ base: 'md', md: '28px' }}>
+              <ListItem>・まだ何も決まっていない段階でもOK</ListItem>
+              <ListItem>・英語が苦手でもOK</ListItem>
+              <ListItem>・留学するかどうか迷っている段階からでOK</ListItem>
+            </List>
+            <Text fontSize={{ base: 'md', md: '28px' }} color="gray.700" mb={4}>
+              まずは今の状況を聞かせてください。<br />
+              <b>必要な情報と、考えるヒントを"先回り"して提供するのが、私たちの役割です。</b>
+            </Text>
+            <Box textAlign="center" mt={4}>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <Box as="span" bg="green.400" color="white" px={6} py={3} borderRadius="full" fontWeight="bold" fontSize="lg" boxShadow="md" _hover={{ bg: 'green.500' }} transition="all 0.2s">
+                  LINEで相談する
+                </Box>
+              </a>
+            </Box>
+          </Box>
+          <Divider borderColor="gray.200" borderWidth={1} my={8} />
+          <Box mb={8}>
+            <Heading as="h3" size={{ base: 'md', md: 'xl' }} color="blue.700" fontWeight="bold" mb={6} textAlign="center">
+              世界はすぐそこにある！
+            </Heading>
+            <Box overflowX="auto">
+              <Box bg="white" borderRadius="2xl" boxShadow="2xl" overflow="hidden" border="1px solid #e3e8f0" w="100%">
+                <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 0 }}>
+                  <thead style={{ background: '#f0f4fa' }}>
+                    <tr>
+                      <th style={{ padding: '24px', fontWeight: 'bold', color: '#2D3748', fontSize: '28px', textAlign: 'left' }}>プラン</th>
+                      <th style={{ padding: '24px', fontWeight: 'bold', color: '#2D3748', fontSize: '28px', textAlign: 'left' }}>おすすめな人</th>
+                      <th style={{ padding: '24px', fontWeight: 'bold', color: '#2D3748', fontSize: '28px', textAlign: 'left' }}>目的</th>
+                      <th style={{ padding: '24px', fontWeight: 'bold', color: '#2D3748', fontSize: '28px', textAlign: 'left' }}>費用感</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style={{ transition: 'all 0.2s' }}>
+                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>サマーキャンプ</td>
+                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>初めての海外、試してみたい人</td>
+                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>挑戦と体験</td>
+                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>約39万円〜</td>
+                    </tr>
+                    <tr style={{ transition: 'all 0.2s' }}>
+                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>現地校見学</td>
+                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>進路を迷っていて、見て決めたい人</td>
+                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>納得感ある進学選び</td>
+                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>$4980〜</td>
+                    </tr>
+                    <tr style={{ transition: 'all 0.2s' }}>
+                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>出願・入学サポ</td>
+                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>すでに留学を決めている人</td>
+                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>合格・入学準備</td>
+                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>応相談（セットプランあり）</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </Box>
+            </Box>
+          </Box>
+          <Box textAlign="center" mt={8}>
+            <Text fontSize={{ base: 'md', md: '28px' }} color="gray.700" fontWeight="bold">
+              ご相談はこちら ▶️ <a href="#" style={{ color: '#38A169', textDecoration: 'underline' }}>LINEで相談する</a>
+            </Text>
+          </Box>
+        </Box>
         <Box mt={20}>
           <FaqPreview 
             title="サービスに関するよくある質問"
