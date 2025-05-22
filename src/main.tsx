@@ -15,6 +15,7 @@ import { VoicesPage } from './pages/Voices'
 import { FaqPage } from './pages/Faq'
 import { ContactPage } from './pages/Contact'
 import { AboutPage } from './pages/About'
+import ServiceDetailPage from './pages/ServiceDetail'
 
 const routerWithScroll = createBrowserRouter([
   {
@@ -33,6 +34,7 @@ const routerWithScroll = createBrowserRouter([
       { path: "/faq", element: <FaqPage /> },
       { path: "/contact", element: <ContactPage /> },
       { path: "/about", element: <AboutPage /> },
+      { path: "/service-detail", element: <ServiceDetailPage /> },
     ],
   },
 ])
