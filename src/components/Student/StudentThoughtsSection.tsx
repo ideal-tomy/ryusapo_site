@@ -37,8 +37,8 @@ export const StudentThoughtsSection = () => (
     <Stack spacing={8} maxW="container.lg" mx="auto">
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={0}>
         <Image src="/images/students001.png" alt="男子高校生" width="100%" height="auto" />
-        <Image src="/images/students001.png" alt="男子高校生" width="100%" height="auto" />
-        <Image src="/images/students001.png" alt="男子高校生" width="100%" height="auto" />
+        <Image src="/images/students002.png" alt="男子高校生" width="100%" height="auto" />
+        <Image src="/images/students003.png" alt="男子高校生" width="100%" height="auto" />
       </SimpleGrid>
     </Stack>
   </Box>

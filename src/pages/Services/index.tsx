@@ -12,6 +12,7 @@ import { FaqPreview, servicePageFaqs, FaqItem } from '../../components/common/Fa
 // import { OptionServices } from '../../components/Services/OptionServices';
 import { ComparisonTable } from '../../components/Services/ComparisonTable';
 import { PricingTable } from '../../components/Services/PricingTable';
+import { SchoolVisitPricingTable } from '../../components/Services/SchoolVisitPricingTable';
 
 export const ServicesPage = () => {
   return (
@@ -39,6 +40,8 @@ export const ServicesPage = () => {
 
       {/* 新しい料金一覧セクション */}
       <PricingTable />
+      {/* 現地校見学料金表セクション */}
+      <SchoolVisitPricingTable />
       
       {/* 6. よくある質問（導線） */}
       <FaqPreview 
