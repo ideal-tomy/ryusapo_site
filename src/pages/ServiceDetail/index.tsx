@@ -203,9 +203,21 @@ const ServiceDetailPage = () => {
             </SimpleGrid>
             <Box textAlign="center" mt={8}>
               <Box my={12}>
-                <Heading as="h2" size={{ base: 'md', md: 'xl' }} color="blue.700" fontWeight="extrabold" textAlign="center" mb={8}>
-                  サマーキャンプ1日の流れ
-                </Heading>
+                <Box position="relative" mb={8}>
+                  <Divider borderColor="gray.300" borderWidth={1} mb={6} w="60%" mx="auto" opacity={0.8} />
+                  <Heading
+                    as="h2"
+                    size={{ base: 'lg', md: '2xl' }}
+                    color="blue.700"
+                    fontWeight="extrabold"
+                    letterSpacing="wide"
+                    textAlign="center"
+                    mb={6}
+                  >
+                    サマーキャンプ1日の流れ
+                  </Heading>
+                  <Divider borderColor="gray.300" borderWidth={1} mt={6} w="60%" mx="auto" opacity={0.8} />
+                </Box>
                 <VStack spacing={8} align="stretch">
                   {[
                     {
@@ -232,9 +244,9 @@ const ServiceDetailPage = () => {
                       desc: '1日の終わりに、仲間やスタッフと一緒に「今日の気づき」「明日の目標」を共有。 不安や悩みもすぐに相談できる環境で、安心して新しい挑戦を続けられます。',
                       blue: '心の成長と安心感が、次のチャレンジへの原動力になります。'
                     }
-                  ].map(item => (
+                  ].map((item, idx, arr) => (
+                    <React.Fragment key={item.time}>
                     <Grid
-                      key={item.time}
                       templateColumns={{ base: '120px 1fr', md: '160px 1fr' }}
                       alignItems="baseline"
                       gap={6}
@@ -261,6 +273,10 @@ const ServiceDetailPage = () => {
                         )}
                       </Box>
                     </Grid>
+                    {idx !== arr.length - 1 && (
+                        <Divider borderColor="gray.300" borderWidth={1} my={8} w="80%" mx="auto" />
+                      )}
+                    </React.Fragment>
                   ))}
                 </VStack>
               </Box>
@@ -308,7 +324,6 @@ const ServiceDetailPage = () => {
                           />
                   </Box>
                         <Box order={{ base: 2, md: idx % 2 === 0 ? 2 : 1 }} textAlign="left">
-                          <Text fontSize="lg" fontWeight="semibold">{item.title}</Text>
                           <Text mt={2}>{item.desc}</Text>
                 </Box>
                       </Grid>
@@ -333,7 +348,11 @@ const ServiceDetailPage = () => {
                 {serviceData[1].catch}
               </Heading>
               <Text fontSize={{ base: 'md', md: 'xl' }} color="gray.700" mb={2} fontWeight="bold">
-                {serviceData[1].subtitle}
+                「案内人」ではなく
+                <Text as="span" fontSize="1.2em" color="#002f5f" fontWeight="extrabold" textDecoration="underline" textDecorationColor="#002f5f" textDecorationThickness="2px" textUnderlineOffset="3px">
+                  "コンシェルジュ"
+                </Text>
+                として、学校選びから体験まで一貫サポート
               </Text>
             </Box>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={0} alignItems="start" mb={8}>
