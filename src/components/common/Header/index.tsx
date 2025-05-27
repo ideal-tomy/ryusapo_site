@@ -26,6 +26,7 @@ const NAV_ITEMS = [
   { name: 'トップ', to: '/' },
   { name: '中高生の方へ', to: '/student' },
   { name: '保護者の方へ', to: '/parent' },
+  { name: 'サービスディテール', to: '/service-detail' },
   { name: 'サポート・料金', to: '/services' },
   { name: '会社紹介', to: '/about' },
   { name: 'よくある質問', to: '/faq' },

@@ -148,18 +148,17 @@ const ServiceDetailPage = () => {
                     <Grid
                       key={item.time}
                       templateColumns={{ base: '120px 1fr', md: '160px 1fr' }}
-                      alignItems="center"
+                      alignItems="baseline"
                       gap={6}
                       w="100%"
                       maxW="800px"
-                      mx="auto"
+                  mx="auto"
                     >
                       <Box
                         color="blue.700"
                         fontWeight="bold"
                         fontSize="36px"
                         textAlign="right"
-                        pt={1}
                         w="100%"
                       >
                         {item.time}
@@ -199,7 +198,7 @@ const ServiceDetailPage = () => {
                       )}
                       <Heading as="h3" size={{ base: 'md', md: 'xl' }} color="brand.base" mb={4} fontWeight="bold" textAlign="center">
                         {item.title}
-                      </Heading>
+                    </Heading>
                       <Grid
                         templateColumns={{ base: '1fr', md: idx % 2 === 0 ? '160px 1fr' : '1fr 160px' }}
                         alignItems="center"
@@ -219,22 +218,22 @@ const ServiceDetailPage = () => {
                             flexShrink={0}
                             mx={{ base: 'auto', md: 0 }}
                           />
-                        </Box>
+                  </Box>
                         <Box order={{ base: 2, md: idx % 2 === 0 ? 2 : 1 }} textAlign="left">
                           <Text fontSize="lg" fontWeight="semibold">{item.title}</Text>
                           <Text mt={2}>{item.desc}</Text>
-                        </Box>
+                </Box>
                       </Grid>
                       <Text color="blue.600" fontWeight="bold" fontSize={{ base: 'md', md: '24px' }} mt={4} mb={2} textAlign="center">
                         {item.blue}
-                      </Text>
+                    </Text>
                       {idx !== arr.length - 1 && (
                         <Divider borderColor="gray.300" borderWidth={1} my={8} w="80%" mx="auto" />
                       )}
                     </Box>
                   ))}
                 </VStack>
-              </Box>
+                </Box>
             </Box>
           </Box>
           <Box borderRadius="2xl" boxShadow="2xl" p={{ base: 4, md: 12 }} bg={serviceData[1].bg}>
@@ -354,11 +353,11 @@ const ServiceDetailPage = () => {
                           flexShrink={0}
                           mx={{ base: 'auto', md: 0 }}
                         />
-                      </Box>
+                  </Box>
                       <Box order={{ base: 2, md: idx % 2 === 0 ? 2 : 1 }} textAlign="left">
                         <Text fontSize="lg" fontWeight="semibold">{item.title}</Text>
                         <Text mt={2}>{item.text}</Text>
-                      </Box>
+                </Box>
                     </Grid>
                     <Text color="blue.600" fontWeight="bold" fontSize={{ base: 'md', md: '24px' }} mt={4} mb={2} textAlign="center">
                       {item.blue}
