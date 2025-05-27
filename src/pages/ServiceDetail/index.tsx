@@ -151,6 +151,8 @@ const ServiceDetailPage = () => {
                       alignItems="center"
                       gap={6}
                       w="100%"
+                      maxW="800px"
+                      mx="auto"
                     >
                       <Box
                         color="blue.700"
