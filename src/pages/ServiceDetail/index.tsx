@@ -42,9 +42,9 @@ const serviceData = [
     `,
     features: [
       { title: '学校選定・見学アポ取得・日程調整', img: '/images/summer02.jpg', description: '希望や適性を丁寧にヒアリングし、最適な学校をリストアップ。見学アポイントや日程調整もすべてお任せください。', blue: '「自分に本当に合う学校」と出会うための一歩を、プロが徹底サポート。' },
-      { title: '当日の同行・通訳・現地スタッフ紹介', img: '/images/summer02.jpg', description: '日本人・バイリンガルスタッフが現地で同行し、通訳や現地生活のリアルな情報もご案内。保護者の方も安心です。', blue: '「パンフレットでは分からない」学校の空気や雰囲気を、肌で体感できます。' },
+      { title: '当日の同行・通訳', img: '/images/summer02.jpg', description: '日本人・バイリンガルスタッフが現地で同行し、通訳や現地生活のリアルな情報もご案内。保護者の方も安心です。', blue: '「パンフレットでは分からない」学校の空気や雰囲気を、肌で体感できます。' },
       { title: '在学生・卒業生ネットワークでリアルな声を提供', img: '/images/summer02.jpg', description: '実際に通っている生徒や卒業生の「生の声」を直接聞ける機会をアレンジ。疑問や不安もその場で解消。', blue: '「本当に自分に合うか」を納得して選べる、唯一無二の体験です。' },
-      { title: '見学後のフィードバック・進路相談・出願サポート', img: '/images/summer02.jpg', description: '見学後は、感じたこと・気づきを一緒に整理。進路相談や出願・入学手続きまで一気通貫でサポートします。', blue: '「見て終わり」ではなく、未来につながるアクションまで伴走します。' },
+      { title: '見学後のフィードバック・進路相談・出願サポート', img: '/images/summer02.jpg', description: '見学後は、感じたこと・気づきを一緒に整理。進路相談や出願・入学手続き（別プランをご用意）まで一気通貫でサポートします。', blue: '「見て終わり」ではなく、未来につながるアクションまで伴走します。' },
       { title: '安心・快適な環境づくり（移動・滞在・保護者向け）', img: '/images/summer02.jpg', description: '移動や滞在先の手配、保護者向けのサポートも充実。初めての現地訪問でもストレスなく過ごせます。', blue: '「家族みんなが安心できる」現地校見学を実現します。' },
       { title: 'コスパの良さ（料金表で明示）', img: '/images/summer02.jpg', description: 'ここまで手厚いサポートを、明朗な料金体系でご提供。費用面も納得してご利用いただけます。', blue: '「この価格でここまで？」と驚かれるコスパの良さを実感してください。' }
     ],
@@ -68,31 +68,37 @@ const serviceData = [
         title: '学校選定・エッセイ添削・面接練習',
         text: '生徒様の希望や適性を丁寧にヒアリングし、最適な進学先をご提案。合格に向けたエッセイ添削や面接練習も専門家が徹底サポートします。',
         blue: '「夢への最短ルート」を一緒に見つけ、実現します。',
-        img: 'https://placehold.jp/160x160.png?text=Apply1',
+        img: '/images/sapport03.jpg',
       },
       {
-        title: 'ビザ取得・現地生活準備',
-        text: '複雑なビザ申請手続きから、渡航前の準備、現地での生活セットアップまで、安心して新生活をスタートできるようサポートします。',
-        blue: '「言葉の壁も心配無用」万全の準備で留学生活を。',
-        img: 'https://placehold.jp/160x160.png?text=Apply2',
+        title: '出願書類作成・推薦状依頼サポート',
+        text: '複雑な出願書類も、経験豊富なスタッフが丁寧にサポート。',
+        blue: '「書類選考で差をつける」ための戦略を伝授します。',
+        img: '/images/sapport03.jpg',
       },
       {
-        title: '入学後の初期サポート',
-        text: '現地到着後のオリエンテーションや、学業・生活面での初期の悩み相談など、スムーズに新しい環境に慣れるためのお手伝いをします。',
-        blue: '「一人じゃない安心感」で、充実した留学生活を。',
-        img: 'https://placehold.jp/160x160.png?text=Apply3',
+        title: '合格後の入学手続き・ビザ申請サポート',
+        text: '合格後も安心。入学手続きやビザ申請など、煩雑な手続きを代行。',
+        blue: '「スムーズな渡航準備」で、新生活を応援します。',
+        img: '/images/sapport03.jpg',
       },
       {
-        title: '留学経験者がマンツーマンで伴走',
-        text: '実際に留学を経験したカウンセラーが、生徒様一人ひとりに寄り添い、出願から卒業まで一貫してサポート。実体験に基づくアドバイスが強みです。',
-        blue: '「先輩がいるから心強い」あなたの挑戦を全力で応援。',
-        img: 'https://placehold.jp/160x160.png?text=Apply4',
+        title: '渡航前オリエンテーション・現地生活準備サポート',
+        text: '渡航前の不安を解消。現地での生活情報や注意事項を丁寧に説明。',
+        blue: '「自信を持って出発できる」よう、万全の準備を。',
+        img: '/images/sapport03.jpg',
       },
       {
         title: '英語指導パートナーと連携し全て対応',
         text: '提携する専門の英語指導機関と連携し、留学に必要な英語力の向上から、専門分野の英語対策まで幅広くカバーします。',
         blue: '「英語力アップもお任せ」目標達成をサポート。',
-        img: 'https://placehold.jp/160x160.png?text=Apply5',
+        img: '/images/sapport03.jpg',
+      },
+      {
+        title: '留学経験者がマンツーマンで伴走',
+        text: '実際に留学を経験したカウンセラーが、生徒様一人ひとりに寄り添い、出願から卒業まで一貫してサポート。実体験に基づくアドバイスが強みです。',
+        blue: '「先輩がいるから心強い」あなたの挑戦を全力で応援。',
+        img: '/images/sapport03.jpg',
       },
       {
         title: '家庭ごとの事情に寄り添う柔軟な対応',
@@ -458,12 +464,11 @@ const ServiceDetailPage = () => {
                         />
                       </Box>
                       <Box order={{ base: 2, md: idx % 2 === 0 ? 2 : 1 }} textAlign="left">
-                        <Text fontSize="lg" fontWeight="semibold" color="gray.800">{item.title}</Text>
-                        <Text mt={2} color="gray.700">{item.text}</Text>
+                        <Text mt={2} color="gray.700" fontSize="24px">{item.text}</Text>
                       </Box>
                     </Grid>
                     {item.blue && (
-                      <Text color="blue.600" fontWeight="bold" fontSize={{ base: 'md', md: '24px' }} mt={4} mb={2} textAlign="center">
+                      <Text color="blue.600" fontWeight="bold" fontSize="28px" mt={4} mb={2} textAlign="center">
                         {item.blue}
                       </Text>
                     )}
@@ -549,13 +554,13 @@ const ServiceDetailPage = () => {
                       <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>現地校見学</td>
                       <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>進路を迷っていて、見て決めたい人</td>
                       <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>納得感ある進学選び</td>
-                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>$4980〜</td>
+                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>約99万円〜</td>
                     </tr>
                     <tr style={{ transition: 'all 0.2s' }}>
                       <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>出願・入学サポ</td>
                       <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>すでに留学を決めている人</td>
                       <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>合格・入学準備</td>
-                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>応相談（セットプランあり）</td>
+                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>約9.8万円～</td>
                     </tr>
                   </tbody>
                 </table>
