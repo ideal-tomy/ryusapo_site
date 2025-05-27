@@ -158,7 +158,7 @@ const ServiceDetailPage = () => {
                         color="blue.700"
                         fontWeight="bold"
                         fontSize="36px"
-                        textAlign="right"
+                        textAlign="center"
                         w="100%"
                       >
                         {item.time}
