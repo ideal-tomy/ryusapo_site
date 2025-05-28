@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Heading, Text, VStack, SimpleGrid, List, ListItem, ListIcon, Image, Badge, useBreakpointValue, Divider, Flex, Grid } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, VStack, SimpleGrid, List, ListItem, ListIcon, Image, Badge, useBreakpointValue, Divider, Flex, Grid, Table, Thead, Tbody, Tr, Th, Td, TableContainer } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import { MainCTA } from '../../components/common/MainCTA';
 import { FaqPreview, servicePageFaqs } from '../../components/common/FaqPreview';
@@ -104,7 +104,7 @@ const serviceData = [
         title: '家庭ごとの事情に寄り添う柔軟な対応',
         text: 'ご家庭の教育方針や経済的な状況、生徒様の個性や目標など、あらゆる事情を考慮し、最適な留学プランをオーダーメイドでご提案します。',
         blue: '「あなただけの留学プラン」を一緒に作り上げます。',
-        img: 'https://placehold.jp/160x160.png?text=Apply6',
+        img: 'https://placehold.jp/160x160.png',
       },
     ]
   }
@@ -144,14 +144,14 @@ const ServiceDetailPage = () => {
         </Box>
         <Box order={{ base: 2, md: idx % 2 === 0 ? 2 : 1 }} textAlign="left" p={1}>
           {/* The Heading above already displays the title. This Box is for the description. */}
-          <Text fontSize="24px" color="gray.700" whiteSpace="pre-line">
+          <Text fontSize={{ base: 'md', md: '24px' }} color="gray.700" whiteSpace="pre-line">
             {item.description}
           </Text>
         </Box>
       </Grid>
       {item.blue && (
         <Text
-          fontSize="28px"
+          fontSize={{ base: 'lg', md: '28px' }}
           color="blue.500" // Chakra UIの青色スケールを使用。brand.blue等も可
           mt={4}
           textAlign="center"
@@ -168,20 +168,44 @@ const ServiceDetailPage = () => {
   ));
   return (
     <Box as="main" bg="gray.50">
-      <Container maxW="container.xl" py={12}>
-        <Heading as="h1" size="2xl" mb={8} color="brand.base" textAlign="center" letterSpacing="wide">
-          <Box as="span" display="inline-block" bgGradient="linear(to-r, brand.base, blue.400)" bgClip="text" fontWeight="extrabold">
-            サービス紹介
-          </Box>
-        </Heading>
-        <Text fontSize="xl" color="gray.700" mb={12} textAlign="center" fontWeight="bold">
-          サマーキャンプから現地校見学、出願・入学手続きまで——<br />
-          留サポは「留学までのすべて」を、あなたの"挑戦"に寄り添いながら一気通貫でサポートします。
-        </Text>
-        <VStack spacing={20} align="stretch">
+      {/* Hero Section with Background Image and Overlay */}
+      <Box
+        bgImage="url('/images/test.png')"
+        bgPosition="center"
+        bgRepeat="no-repeat"
+        bgSize="cover"
+        position="relative"
+        py={{ base: 20, md: 40 }}
+        color="white" // Default text color for hero section
+      >
+        <Box // Overlay Box
+          position="absolute"
+          top="0"
+          left="0"
+          right="0"
+          bottom="0"
+          bg="rgba(0, 0, 0, 0.5)" // Black overlay with 50% opacity
+          zIndex="0"
+        />
+        <Container maxW="container.xl" position="relative" zIndex="1">
+          <Heading as="h1" size="2xl" mb={{ base: 4, md: 8 }} textAlign="center" letterSpacing="wide">
+            <Box as="span" display="inline-block" bgGradient="linear(to-r, blue.300, cyan.300)" bgClip="text" fontWeight="extrabold">
+              サービス紹介
+            </Box>
+          </Heading>
+          <Text fontSize="24px" color="gray.100" mb={{ base: 8, md: 12 }} textAlign="center" fontWeight="bold">
+            サマーキャンプから現地校見学、出願・入学手続きまで——<br />
+            留サポは「留学までのすべて」を、あなたの"挑戦"に寄り添いながら一気通貫でサポートします。
+          </Text>
+        </Container>
+      </Box>
+
+      {/* Rest of the page content */}
+      <Container maxW="container.xl" py={{ base: 8, md: 12 }}>
+        <VStack spacing={{ base: 10, md: 20 }} align="stretch">
           <Box borderRadius="2xl" boxShadow="2xl" p={{ base: 4, md: 12 }} bg={serviceData[0].bg}>
             <Box textAlign="center" mb={8}>
-              <Badge colorScheme="blue" fontSize={{ base: 'md', md: 'lg' }} mb={2} px={4} py={1} borderRadius="full" fontWeight="bold">
+              <Badge colorScheme="blue" fontSize={{ base: '22px', md: 'lg' }} mb={2} px={4} py={1} borderRadius="full" fontWeight="bold">
                 {serviceData[0].title}
               </Badge>
               <Heading as="h2" size={{ base: 'lg', md: '2xl' }} color="brand.base" mb={2} fontWeight="extrabold" letterSpacing="wide">
@@ -202,7 +226,7 @@ const ServiceDetailPage = () => {
               </Box>
             </SimpleGrid>
             <Box textAlign="center" mt={8}>
-              <Box my={12}>
+              <Box my={{ base: 4, md: 12 }}>
                 <Box position="relative" mb={8}>
                   <Divider borderColor="gray.300" borderWidth={1} mb={6} w="60%" mx="auto" opacity={0.8} />
                   <Heading
@@ -218,7 +242,7 @@ const ServiceDetailPage = () => {
                   </Heading>
                   <Divider borderColor="gray.300" borderWidth={1} mt={6} w="60%" mx="auto" opacity={0.8} />
                 </Box>
-                <VStack spacing={8} align="stretch">
+                <VStack spacing={{ base: 2, md: 8 }} align="stretch">
                   {[
                     {
                       time: '9:00',
@@ -247,9 +271,9 @@ const ServiceDetailPage = () => {
                   ].map((item, idx, arr) => (
                     <React.Fragment key={item.time}>
                     <Grid
-                      templateColumns={{ base: '120px 1fr', md: '160px 1fr' }}
+                      templateColumns={{ base: '1fr', md: '160px 1fr' }}
                       alignItems="baseline"
-                      gap={6}
+                      gap={{ base: 3, md: 6 }}
                       w="100%"
                       maxW="800px"
                   mx="auto"
@@ -257,31 +281,32 @@ const ServiceDetailPage = () => {
                       <Box
                         color="blue.700"
                         fontWeight="bold"
-                        fontSize="36px"
-                        textAlign="center"
+                        fontSize={{ base: 'lg', md: '36px' }}
+                        textAlign='center'
                         w="100%"
+                        mb={{ base: 1, md: 0 }}
                       >
                         {item.time}
                       </Box>
                       <Box>
-                        <Text fontWeight="bold" fontSize="36px" mb={1} color="brand.base">{item.title}</Text>
-                        <Text color="gray.700" mb={2} fontSize={{ base: 'md', md: '22px' }}>{item.desc}</Text>
+                        <Text fontWeight="bold" fontSize={{ base: 'lg', md: '36px' }} mb={{ base: 0.5, md: 1 }} color="brand.base">{item.title}</Text>
+                        <Text color="gray.700" mb={{ base: 1, md: 2 }} fontSize={{ base: 'md', md: '24px' }}>{item.desc}</Text>
                         {item.blue && (
-                          <Text color="blue.600" fontWeight="bold" fontSize={{ base: 'md', md: '24px' }}>
+                          <Text color="blue.600" fontWeight="bold" fontSize={{ base: 'lg', md: '28px' }}>
                             {item.blue}
                           </Text>
                         )}
                       </Box>
                     </Grid>
                     {idx !== arr.length - 1 && (
-                        <Divider borderColor="gray.300" borderWidth={1} my={8} w="80%" mx="auto" />
+                        <Divider borderColor="gray.300" borderWidth={1} my={{ base: 4, md: 8 }} w="80%" mx="auto" />
                       )}
                     </React.Fragment>
                   ))}
                 </VStack>
               </Box>
-              <Box my={12}>
-                <VStack spacing={12} align="stretch" w="100%">
+              <Box my={{ base: 4, md: 12 }}>
+                <VStack spacing={{ base: 4, md: 12 }} align="stretch" w="100%">
                   {[
                     {
                       title: '現地スタッフ同行・健康管理',
@@ -324,10 +349,10 @@ const ServiceDetailPage = () => {
                           />
                   </Box>
                         <Box order={{ base: 2, md: idx % 2 === 0 ? 2 : 1 }} textAlign="left">
-                          <Text mt={2}>{item.desc}</Text>
+                          <Text mt={2} fontSize='24px'>{item.desc}</Text>
                 </Box>
                       </Grid>
-                      <Text color="blue.600" fontWeight="bold" fontSize={{ base: 'md', md: '24px' }} mt={4} mb={2} textAlign="center">
+                      <Text color="blue.600" fontWeight="bold" fontSize='28px' mt={4} mb={2} textAlign="center">
                         {item.blue}
                     </Text>
                       {idx !== arr.length - 1 && (
@@ -341,7 +366,7 @@ const ServiceDetailPage = () => {
           </Box>
           <Box borderRadius="2xl" boxShadow="2xl" p={{ base: 4, md: 12 }} bg={serviceData[1].bg}>
             <Box textAlign="center" mb={8}>
-              <Badge colorScheme="blue" fontSize={{ base: 'md', md: 'lg' }} mb={2} px={4} py={1} borderRadius="full" fontWeight="bold">
+              <Badge colorScheme="blue" fontSize={{ base: '22px', md: 'lg' }} mb={2} px={4} py={1} borderRadius="full" fontWeight="bold">
                 {serviceData[1].title}
               </Badge>
               <Heading as="h2" size={{ base: 'lg', md: '2xl' }} color="brand.base" mb={2} fontWeight="extrabold" letterSpacing="wide">
@@ -366,7 +391,7 @@ const ServiceDetailPage = () => {
               </Box>
             </SimpleGrid>
             <Box textAlign="center" mt={8}>
-              <Box my={12} position="relative">
+              <Box my={{ base: 4, md: 12 }} position="relative">
                 <Divider 
                   borderColor="gray.300" 
                   borderWidth={1} 
@@ -395,7 +420,7 @@ const ServiceDetailPage = () => {
                   opacity={0.8}
                 />
               </Box>
-              <VStack spacing={12} align="stretch" w="100%">
+              <VStack spacing={{ base: 4, md: 12 }} align="stretch" w="100%">
 {visitFeaturesContent}
               </VStack>
               <Box mt={8}>{serviceData[1].priceTable && <SchoolVisitPricingTable />}</Box>
@@ -403,7 +428,7 @@ const ServiceDetailPage = () => {
           </Box>
           <Box borderRadius="2xl" boxShadow="2xl" p={{ base: 4, md: 12 }} bg={serviceData[2].bg}>
             <Box textAlign="center" mb={8}>
-              <Badge colorScheme="blue" fontSize={{ base: 'md', md: 'lg' }} mb={2} px={4} py={1} borderRadius="full" fontWeight="bold">
+              <Badge colorScheme="blue" fontSize={{ base: '22px', md: 'lg' }} mb={2} px={4} py={1} borderRadius="full" fontWeight="bold">
                 {serviceData[2].title}
               </Badge>
               <Heading as="h2" size={{ base: 'lg', md: '2xl' }} color="brand.base" mb={2} fontWeight="extrabold" letterSpacing="wide">
@@ -424,7 +449,7 @@ const ServiceDetailPage = () => {
               </Box>
             </SimpleGrid>
             <Box textAlign="center" mt={8}>
-              <Box my={12} position="relative">
+              <Box my={{ base: 4, md: 12 }} position="relative">
                 <Divider 
                   borderColor="gray.300" 
                   borderWidth={1} 
@@ -453,7 +478,7 @@ const ServiceDetailPage = () => {
                   opacity={0.8}
                 />
               </Box>
-              <VStack spacing={12} align="stretch" w="100%">
+              <VStack spacing={{ base: 4, md: 12 }} align="stretch" w="100%">
                 {(serviceData[2].features as { title: string; text: string; blue: string; img: string; }[]).map((item, idx, arr) => (
                   <Box key={item.title} w="100%">
                     {idx === 0 && (
@@ -483,11 +508,11 @@ const ServiceDetailPage = () => {
                         />
                       </Box>
                       <Box order={{ base: 2, md: idx % 2 === 0 ? 2 : 1 }} textAlign="left">
-                        <Text mt={2} color="gray.700" fontSize="24px">{item.text}</Text>
+                        <Text mt={2} color="gray.700" fontSize={{ base: 'md', md: '24px' }}>{item.text}</Text>
                       </Box>
                     </Grid>
                     {item.blue && (
-                      <Text color="blue.600" fontWeight="bold" fontSize="28px" mt={4} mb={2} textAlign="center">
+                      <Text color="blue.600" fontWeight="bold" fontSize={{ base: 'lg', md: '28px' }} mt={4} mb={2} textAlign="center">
                         {item.blue}
                       </Text>
                     )}
@@ -547,45 +572,6 @@ const ServiceDetailPage = () => {
             </Box>
           </Box>
           <Divider borderColor="gray.200" borderWidth={1} my={8} />
-          <Box mb={8}>
-            <Heading as="h3" size={{ base: 'md', md: 'xl' }} color="blue.700" fontWeight="bold" mb={6} textAlign="center">
-              世界はすぐそこにある！
-            </Heading>
-            <Box overflowX="auto">
-              <Box bg="white" borderRadius="2xl" boxShadow="2xl" overflow="hidden" border="1px solid #e3e8f0" w="100%">
-                <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 0 }}>
-                  <thead style={{ background: '#f0f4fa' }}>
-                    <tr>
-                      <th style={{ padding: '24px', fontWeight: 'bold', color: '#2D3748', fontSize: '28px', textAlign: 'left' }}>プラン</th>
-                      <th style={{ padding: '24px', fontWeight: 'bold', color: '#2D3748', fontSize: '28px', textAlign: 'left' }}>おすすめな人</th>
-                      <th style={{ padding: '24px', fontWeight: 'bold', color: '#2D3748', fontSize: '28px', textAlign: 'left' }}>目的</th>
-                      <th style={{ padding: '24px', fontWeight: 'bold', color: '#2D3748', fontSize: '28px', textAlign: 'left' }}>費用感</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr style={{ transition: 'all 0.2s' }}>
-                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>サマーキャンプ</td>
-                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>初めての海外、試してみたい人</td>
-                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>挑戦と体験</td>
-                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>約39万円〜</td>
-                    </tr>
-                    <tr style={{ transition: 'all 0.2s' }}>
-                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>現地校見学</td>
-                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>進路を迷っていて、見て決めたい人</td>
-                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>納得感ある進学選び</td>
-                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>約99万円〜</td>
-                    </tr>
-                    <tr style={{ transition: 'all 0.2s' }}>
-                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>出願・入学サポ</td>
-                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>すでに留学を決めている人</td>
-                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>合格・入学準備</td>
-                      <td style={{ padding: '24px', borderTop: '1px solid #e2e8f0', fontSize: '28px' }}>約9.8万円～</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </Box>
-            </Box>
-          </Box>
           <Box textAlign="center" mt={8}>
             <Text fontSize={{ base: 'md', md: '28px' }} color="gray.700" fontWeight="bold">
               ご相談はこちら ▶️ <a href="#" style={{ color: '#38A169', textDecoration: 'underline' }}>LINEで相談する</a>
