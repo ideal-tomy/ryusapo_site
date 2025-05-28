@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Container, Heading, Text, VStack, SimpleGrid, List, ListItem, ListIcon, Image, Badge, useBreakpointValue, Divider, Flex, Grid, Table, Thead, Tbody, Tr, Th, Td, TableContainer } from '@chakra-ui/react';
-import { CheckCircleIcon } from '@chakra-ui/icons';
+import { Box, Container, Heading, Text, VStack, SimpleGrid, List, ListItem, ListIcon, Image, Badge, useBreakpointValue, Divider, Flex, Grid, Table, Thead, Tbody, Tr, Th, Td, TableContainer, UnorderedList, Icon } from '@chakra-ui/react';
+import { CheckCircleIcon, ChatIcon, WarningTwoIcon } from '@chakra-ui/icons';
 import { MainCTA } from '../../components/common/MainCTA';
 import { FaqPreview, servicePageFaqs } from '../../components/common/FaqPreview';
 import { SchoolVisitPricingTable } from '../../components/Services/SchoolVisitPricingTable';
@@ -524,74 +524,90 @@ const ServiceDetailPage = () => {
               </VStack>
             </Box>
           </Box>
-          <Box mt={24} mb={16}>
-            <Heading as="h2" size={{ base: 'lg', md: '2xl' }} color="blue.700" textAlign="center" fontWeight="extrabold" mb={8} letterSpacing="wide">
-              留学って、いつから検討すればいいの？
-          </Heading>
-          <Box mb={8}>
-            <Text fontSize={{ base: 'md', md: '28px' }} color="gray.700" mb={4}>
-              「高校2年になってから、なんとなく"このままでいいのか？"と感じるようになった」<br />
-              「留学もありかもしれないけど、どう調べて、どう判断すればいいのか分からない」
-            </Text>
-            <Text fontSize={{ base: 'md', md: '28px' }} color="gray.700" mb={4}>
-              そんな声をたくさん聞きます。
-            </Text>
-            <Heading as="h3" size={{ base: 'md', md: 'xl' }} color="blue.600" fontWeight="bold" mb={4}>
-              実は、留学は"間に合わなくなる"のが早い。
-            </Heading>
-            <Text fontSize={{ base: 'md', md: '28px' }} color="gray.700" mb={4}>
-              特に正規留学（高校・大学）を検討する場合、<br />
-              <b>出願の1年前には志望校を決めて準備を始める必要がある</b>ため、<br />
-              「2年生の終わり頃」には大まかな方向性を持っているのが理想です。
-            </Text>
-            <Text fontSize={{ base: 'md', md: '28px' }} color="gray.700" mb={4}>
-              出願直前で焦るより、<br />
-              <b>時間をかけて"納得できる選択"をする方が、将来の満足度は圧倒的に高い。</b>
-            </Text>
-          </Box>
-          <Divider borderColor="gray.200" borderWidth={1} my={8} />
-          <Box bg="blue.50" borderRadius="2xl" boxShadow="lg" px={{ base: 4, md: 10 }} py={{ base: 6, md: 10 }} mb={12} borderLeft="8px solid #3182ce">
-            <Heading as="h3" size={{ base: 'md', md: 'xl' }} color="blue.700" fontWeight="extrabold" mb={4}>
-              だからこそ、私たちは"相談だけでも早めに"をおすすめします。
-            </Heading>
-            <List spacing={2} mb={4} color="blue.800" fontWeight="semibold" fontSize={{ base: 'md', md: '28px' }}>
-              <ListItem>・まだ何も決まっていない段階でもOK</ListItem>
-              <ListItem>・英語が苦手でもOK</ListItem>
-              <ListItem>・留学するかどうか迷っている段階からでOK</ListItem>
-            </List>
-            <Text fontSize={{ base: 'md', md: '28px' }} color="gray.700" mb={4}>
-              まずは今の状況を聞かせてください。<br />
-              <b>必要な情報と、考えるヒントを"先回り"して提供するのが、私たちの役割です。</b>
-            </Text>
-            <Box textAlign="center" mt={4}>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <Box as="span" bg="green.400" color="white" px={6} py={3} borderRadius="full" fontWeight="bold" fontSize="lg" boxShadow="md" _hover={{ bg: 'green.500' }} transition="all 0.2s">
-                  LINEで相談する
+          <Box bg="gray.50" py={{ base: 8, md: 16 }}>
+            <Container maxW="container.lg">
+              <VStack spacing={{ base: 6, md: 8 }} align="stretch">
+                <Heading as="h2" size={{ base: 'lg', md: 'xl' }} color="blue.700" textAlign="center" fontWeight="extrabold" letterSpacing="wide">
+                  留学って、いつから検討すればいいの？
+                </Heading>
+
+                <Box bg="white" p={{ base: 4, md: 6 }} borderRadius="lg" boxShadow="base">
+                  <Flex align="center" mb={3}>
+                    <Icon as={ChatIcon} w={6} h={6} color="blue.500" mr={3} />
+                    <Heading as="h3" size="md" color="blue.600" fontWeight="bold" fontSize={{ base: "lg", md: "28px" }}>
+                      こんな悩み、ありませんか？
+                    </Heading>
+                  </Flex>
+                  <Text color="gray.600" mb={2} fontSize={{ base: 'md', md: '24px' }}>
+                    「高校2年になってから、なんとなく"このままでいいのか？"と感じるようになった」
+                  </Text>
+                  <Text color="gray.600" fontSize={{ base: 'md', md: '24px' }}>
+                    「留学もありかもしれないけど、どう調べて、どう判断すればいいのか分からない」
+                  </Text>
+                  <Text color="gray.700" mt={3} fontWeight="medium" fontSize={{ base: 'sm', md: '24px' }}>
+                    ——そんな声を、私たちはたくさん聞いています。
+                  </Text>
                 </Box>
-              </a>
-            </Box>
+
+                <Heading as="h3" size={{ base: 'md', md: 'xl' }} color="blue.600" fontWeight="bold" mb={4}>
+                  実は、留学は"間に合わなくなる"のが早い。
+                </Heading>
+                <Text fontSize={{ base: 'md', md: '24px' }} color="gray.700" mb={4}>
+                  特に正規留学（高校・大学）を検討する場合、<br />
+                  <b>出願の1年前には志望校を決めて準備を始める必要がある</b>ため、<br />
+                  「2年生の終わり頃」には大まかな方向性を持っているのが理想です。
+                </Text>
+                <Text fontSize={{ base: 'md', md: '24px' }} color="gray.700" mb={4}>
+                  出願直前で焦るより、<br />
+                  <b>時間をかけて"納得できる選択"をする方が、将来の満足度は圧倒的に高い。</b>
+                </Text>
+
+                <Divider borderColor="gray.200" borderWidth={1} my={8} />
+                <Box bg="blue.50" borderRadius="2xl" boxShadow="lg" px={{ base: 4, md: 10 }} py={{ base: 6, md: 10 }} mb={12} borderLeft="8px solid #3182ce">
+                  <Heading as="h3" size={{ base: 'md', md: 'xl' }} color="blue.700" fontWeight="extrabold" mb={4}>
+                    だからこそ、私たちは"相談だけでも早めに"をおすすめします。
+                  </Heading>
+                  <List spacing={2} mb={4} color="blue.800" fontWeight="semibold" fontSize={{ base: 'md', md: '28px' }}>
+                    <ListItem>・まだ何も決まっていない段階でもOK</ListItem>
+                    <ListItem>・英語が苦手でもOK</ListItem>
+                    <ListItem>・留学するかどうか迷っている段階からでOK</ListItem>
+                  </List>
+                  <Text fontSize={{ base: 'md', md: '28px' }} color="gray.700" mb={4}>
+                    まずは今の状況を聞かせてください。<br />
+                    <b>必要な情報と、考えるヒントを"先回り"して提供するのが、私たちの役割です。</b>
+                  </Text>
+                  <Box textAlign="center" mt={4}>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                      <Box as="span" bg="green.400" color="white" px={6} py={3} borderRadius="full" fontWeight="bold" fontSize="lg" boxShadow="md" _hover={{ bg: 'green.500' }} transition="all 0.2s">
+                        LINEで相談する
+                      </Box>
+                    </a>
+                  </Box>
+                </Box>
+                <Divider borderColor="gray.200" borderWidth={1} my={8} />
+                <Box textAlign="center" mt={8}>
+                  <Text fontSize={{ base: 'md', md: '28px' }} color="gray.700" fontWeight="bold">
+                    ご相談はこちら ▶️ <a href="#" style={{ color: '#38A169', textDecoration: 'underline' }}>LINEで相談する</a>
+                  </Text>
+                </Box>
+
+              </VStack>
+            </Container>
           </Box>
-          <Divider borderColor="gray.200" borderWidth={1} my={8} />
-          <Box textAlign="center" mt={8}>
-            <Text fontSize={{ base: 'md', md: '28px' }} color="gray.700" fontWeight="bold">
-              ご相談はこちら ▶️ <a href="#" style={{ color: '#38A169', textDecoration: 'underline' }}>LINEで相談する</a>
-            </Text>
+          <Box mt={20}>
+            <FaqPreview 
+              title="サービスに関するよくある質問"
+              description="留学サービスについてのよくある質問と回答をご紹介します"
+              showTabs={false}
+              studentFaqs={servicePageFaqs}
+              maxItems={6}
+              defaultTab={0}
+            />
           </Box>
-        </Box>
-        <Box mt={20}>
-          <FaqPreview 
-            title="サービスに関するよくある質問"
-            description="留学サービスについてのよくある質問と回答をご紹介します"
-            showTabs={false}
-            studentFaqs={servicePageFaqs}
-            maxItems={6}
-            defaultTab={0}
-          />
-        </Box>
-        <Box bg="gray.100" py={16} mt={12}>
-          <MainCTA />
-        </Box>
-      </VStack>
+          <Box bg="gray.100" py={16} mt={12}>
+            <MainCTA />
+          </Box>
+        </VStack>
       </Container>
     </Box>
   );
