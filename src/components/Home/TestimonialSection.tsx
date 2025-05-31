@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Text, SimpleGrid, Flex, Avatar, VStack, Button, Link, Icon } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, SimpleGrid, Flex, Avatar, VStack, Button, Link, Icon, Badge } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
@@ -6,7 +6,8 @@ import { FaStar } from 'react-icons/fa';
 type TestimonialProps = {
   name: string;
   age: string;
-  text: string;
+  beforeText: string;
+  afterText: string;
   avatarUrl: string;
   rating?: number;
 };
@@ -15,48 +16,54 @@ const testimonials: TestimonialProps[] = [
   {
     name: 'K.A',
     age: '中学3年生時にサマーキャンプ、その後高校から渡米',
-    text: '中学生まで勉強が苦手でスポーツばかりしていましたが、このままではマズイと思い留学を決めました。\n英語が話せるようになったおかげで、大手外資系IT企業にも就職できたので、本当に人生を変える経験となりました。',
+    beforeText: '中学生まで勉強が苦手でスポーツばかりしていましたが、このままではマズイと思い留学を決めました。',
+    afterText: '英語が話せるようになったおかげで、大手外資系IT企業にも就職できたので、本当に人生を変える経験となりました。',
     avatarUrl: './images/taiken01.jpg',
     rating: 5,
   },
   {
     name: 'N.F',
     age: 'UCLA卒業',
-    text: '高校の頃は英語が苦手で赤点ばかりだった私がUCLAに合格。自力で学費を稼ぎながら必死に学び、気づけばネイティブと間違われるほど英語が上達。留学は大変だったけど、努力は絶対に裏切らない！',
+    beforeText: '高校の頃は英語が苦手で赤点ばかりだった私がUCLAに合格。',
+    afterText: '自力で学費を稼ぎながら必死に学び、気づけばネイティブと間違われるほど英語が上達。留学は大変だったけど、努力は絶対に裏切らない！',
     avatarUrl: './images/S__10854411_0.jpg',
     rating: 5,
   },
   {
     name: 'A.S',
     age: '保護者',
-    text: '正解/不正解で成績を決める日本の教育に違和感を感じていましたが、海外留学をしたことで自分の意見や考えを尊重される環境でのびのびと成長し、卒業後は外資系企業で働いています。\n違いを受け入れ合う仲間たちとの出会いにも、本当に感謝しています。',
+    beforeText: '正解/不正解で成績を決める日本の教育に違和感を感じていましたが、海外留学をしたことで自分の意見や考えを尊重される環境でのびのびと成長し、卒業後は外資系企業で働いています。',
+    afterText: '違いを受け入れ合う仲間たちとの出会いにも、本当に感謝しています。',
     avatarUrl: './images/S__10854413.jpg',
     rating: 5,
   },
   {
     name: 'M.K',
     age: '学生',
-    text: '中学までは周りの目を気にしすぎて人前で話すのが苦手でしたが、現地校でのプレゼンやディスカッションを通して自分の意見を持つことの大切さを学びました。慣れるまでは辛いこともありましたが、友達のコミュニケーションが取れるようになった頃から、自分に自信が持てるようになりました。\nあの時、勇気を出して留学して本当によかったです！',
+    beforeText: '中学までは周りの目を気にしすぎて人前で話すのが苦手でしたが、現地校でのプレゼンやディスカッションを通して自分の意見を持つことの大切さを学びました。',
+    afterText: '慣れるまでは辛いこともありましたが、友達のコミュニケーションが取れるようになった頃から、自分に自信が持てるようになりました。',
     avatarUrl: './images/new_student01.jpg', // 仮の画像パス
     rating: 5,
   },
   {
     name: 'S.R',
     age: '学生',
-    text: 'もともとは日本の大学に進学して交換留学で海外に行きたいなと思っていましたが、参加したサマーキャンプがきっかけで、海外の大学への進学を決意しました。\n異なる価値観を持つ友達と一緒に学ぶことで、自分自身の視野が大きく広がりました。\n就職活動でも、大企業の方がこちらの学校に来て説明会をしてくれたり、その場で面接・内定をいただけて沢山の機会があることを実感しています。英語が話せると就職してからも即戦力になれるとのことなので、今からとっても楽しみです！',
+    beforeText: 'もともとは日本の大学に進学して交換留学で海外に行きたいなと思っていましたが、参加したサマーキャンプがきっかけで、海外の大学への進学を決意しました。',
+    afterText: '異なる価値観を持つ友達と一緒に学ぶことで、自分自身の視野が大きく広がりました。',
     avatarUrl: './images/new_student02.jpg', // 仮の画像パス
     rating: 5,
   },
   {
     name: 'Y.H',
     age: '保護者',
-    text: '得意・不得意の教科の差が激しく、日本の学校の定期テストや模試の成績はまちまちでした。しかし海外ではある領域がずば抜けて得意な方が評価されるため、留学へ行ってからは本人も楽しそうでした。\n一人娘なので心配でしたが、「離れている時間が子どもを成長させる」というモンテッソーリ教育の考え方を自分に言い聞かせていました。\n時々していたビデオ電話で娘の顔つきが変わっていくことに気づき、留学へ行かせて本当に良かったなと思いました。',
+    beforeText: '得意・不得意の教科の差が激しく、日本の学校の定期テストや模試の成績はまちまちでした。しかし海外ではある領域がずば抜けて得意な方が評価されるため、留学へ行ってからは本人も楽しそうでした。',
+    afterText: '一人娘なので心配でしたが、「離れている時間が子どもを成長させる」というモンテッソーリ教育の考え方を自分に言い聞かせていました。',
     avatarUrl: './images/new_parent01.jpg', // 仮の画像パス
     rating: 5,
   },
 ];
 
-const Testimonial = ({ name, age, text, avatarUrl, rating }: TestimonialProps) => {
+const Testimonial = ({ name, age, beforeText, afterText, avatarUrl, rating }: TestimonialProps) => {
   return (
     <Box
       bg="white"
@@ -87,9 +94,17 @@ const Testimonial = ({ name, age, text, avatarUrl, rating }: TestimonialProps) =
         </Flex>
       )}
 
-      <Text fontSize="md" color="gray.700" whiteSpace="pre-line" flex="1">
-        {text}
-      </Text>
+      <Box w="100%" flex="1">
+        <Badge colorScheme="red" mb={2}>Before</Badge>
+        <Text fontSize="sm" fontStyle="italic" color="gray.600" mb={4} whiteSpace="pre-line">
+          "{beforeText}"
+        </Text>
+        
+        <Badge colorScheme="green" mb={2}>After</Badge>
+        <Text fontSize="sm" fontStyle="italic" color="gray.600" whiteSpace="pre-line">
+          "{afterText}"
+        </Text>
+      </Box>
     </Box>
   );
 };
@@ -114,7 +129,8 @@ export const TestimonialSection = () => {
                 key={index} 
                 name={testimonial.name} 
                 age={testimonial.age} 
-                text={testimonial.text} 
+                beforeText={testimonial.beforeText}
+                afterText={testimonial.afterText}
                 avatarUrl={testimonial.avatarUrl} 
                 rating={testimonial.rating}
               />

@@ -1,16 +1,17 @@
 import React from 'react';
-import { Box, Container, Heading, Text, SimpleGrid, VStack, HStack, Avatar, Flex, Icon, Image } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, SimpleGrid, VStack, HStack, Avatar, Flex, Icon, Image, Badge } from '@chakra-ui/react';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 
 type ParentVoiceProps = {
   name: string;
   relation: string;
   childInfo: string;
-  quote: string;
+  beforeText: string;
+  afterText: string;
   imageUrl: string;
 };
 
-const ParentVoice: React.FC<ParentVoiceProps> = ({ name, relation, childInfo, quote, imageUrl }) => {
+const ParentVoice: React.FC<ParentVoiceProps> = ({ name, relation, childInfo, beforeText, afterText, imageUrl }) => {
   return (
     <Box
       bg="white"
@@ -31,11 +32,17 @@ const ParentVoice: React.FC<ParentVoiceProps> = ({ name, relation, childInfo, qu
           borderColor="brand.light"
         />
         <VStack align="start" spacing={3} flex="1">
-          <Icon as={FaQuoteLeft} color="brand.light" w={6} h={6} />
-          <Text fontSize="md" fontStyle="italic" color="gray.600" pb={4}>
-            {quote}
-          </Text>
-          <Icon as={FaQuoteRight} color="brand.light" w={6} h={6} alignSelf="flex-end" />
+          <Box w="100%" flex="1">
+            <Badge colorScheme="red" mb={2}>Before</Badge>
+            <Text fontSize="sm" fontStyle="italic" color="gray.600" mb={4} whiteSpace="pre-line">
+              "{beforeText}"
+            </Text>
+            
+            <Badge colorScheme="green" mb={2}>After</Badge>
+            <Text fontSize="sm" fontStyle="italic" color="gray.600" whiteSpace="pre-line">
+              "{afterText}"
+            </Text>
+          </Box>
           <Box pt={2} borderTop="1px solid" borderColor="gray.200" width="100%">
             <Text fontWeight="bold" color="brand.base" mb={1}>
               {name}
@@ -50,19 +57,21 @@ const ParentVoice: React.FC<ParentVoiceProps> = ({ name, relation, childInfo, qu
   );
 };
 
-const parentVoices = [
+const parentVoices: ParentVoiceProps[] = [
   {
     name: 'A.S',
     relation: '保護者',
     childInfo: 'お子様の情報',
-    quote: '正解/不正解で成績を決める日本の教育に違和感を感じていましたが、海外留学をしたことで自分の意見や考えを尊重される環境でのびのびと成長し、卒業後は外資系企業で働いています。\n違いを受け入れ合う仲間たちとの出会いにも、本当に感謝しています。',
+    beforeText: '正解/不正解で成績を決める日本の教育に違和感を感じていましたが、海外留学をしたことで自分の意見や考えを尊重される環境でのびのびと成長し、卒業後は外資系企業で働いています。',
+    afterText: '違いを受け入れ合う仲間たちとの出会いにも、本当に感謝しています。',
     imageUrl: './images/S__10854413.jpg',
   },
   {
     name: 'Y.H',
     relation: '保護者',
     childInfo: 'お子様の情報',
-    quote: '得意・不得意の教科の差が激しく、日本の学校の定期テストや模試の成績はまちまちでした。しかし海外ではある領域がずば抜けて得意な方が評価されるため、留学へ行ってからは本人も楽しそうでした。\n一人娘なので心配でしたが、「離れている時間が子どもを成長させる」というモンテッソーリ教育の考え方を自分に言い聞かせていました。\n時々していたビデオ電話で娘の顔つきが変わっていくことに気づき、留学へ行かせて本当に良かったなと思いました。',
+    beforeText: '得意・不得意の教科の差が激しく、日本の学校の定期テストや模試の成績はまちまちでした。しかし海外ではある領域がずば抜けて得意な方が評価されるため、留学へ行ってからは本人も楽しそうでした。',
+    afterText: '一人娘なので心配でしたが、「離れている時間が子どもを成長させる」というモンテッソーリ教育の考え方を自分に言い聞かせていました。\\n時々していたビデオ電話で娘の顔つきが変わっていくことに気づき、留学へ行かせて本当に良かったなと思いました。',
     imageUrl: './images/new_parent01.jpg',
   }
 ];
