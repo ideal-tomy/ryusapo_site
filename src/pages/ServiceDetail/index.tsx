@@ -170,7 +170,7 @@ const ServiceDetailPage = () => {
     <Box as="main" bg="gray.50">
       {/* Hero Section with Background Image and Overlay */}
       <Box
-        bgImage="url('/images/test.png')"
+        bgImage="url('/images/service_hero.png')"
         bgPosition="center"
         bgRepeat="no-repeat"
         bgSize="cover"
