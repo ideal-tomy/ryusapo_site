@@ -51,7 +51,7 @@ const StudentVoice: React.FC<StudentVoiceProps> = ({ name, age, location, before
 
 const studentVoices: StudentVoiceProps[] = [
   {
-    name: 'T.K',
+    name: 'K.A',
     age: '外資系IT企業勤務',
     location: 'ボストン',
     beforeText: '勉強が苦手でスポーツばかりしていましたが、このままではマズイと思い留学を決めました。',

@@ -13,7 +13,7 @@ type TestimonialProps = {
 
 const testimonials: TestimonialProps[] = [
   {
-    name: 'T.K',
+    name: 'K.A',
     age: '中学3年生時にサマーキャンプ、その後高校から渡米',
     text: '中学生まで勉強が苦手でスポーツばかりしていましたが、このままではマズイと思い留学を決めました。\n英語が話せるようになったおかげで、大手外資系IT企業にも就職できたので、本当に人生を変える経験となりました。',
     avatarUrl: './images/taiken01.jpg',
