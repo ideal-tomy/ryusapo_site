@@ -14,41 +14,41 @@ interface PriceItem {
 const pricingData: PriceItem[] = [
   {
     serviceName: 'フルサポートセット\n・志望校選び・出願サポート\n・入学手続きサポート',
-    price3Months: '＄4,480',
-    price2Months: '＄4,980',
-    price1Month: '＄5,980',
+    price3Months: '¥448,000',
+    price2Months: '¥498,000',
+    price1Month: '¥598,000',
     planCategory: 'package',
   },
   {
     serviceName: '入学準備セット\n・出願サポート\n・入学手続きサポート',
-    price3Months: '＄1,980',
-    price2Months: '＄2,480',
-    price1Month: '＄2,980',
+    price3Months: '¥198,000',
+    price2Months: '¥248,000',
+    price1Month: '¥298,000',
     highlight: true,
     planCategory: 'package',
   },
   {
     serviceName: '志望校選びサポート',
-    price3Months: '＄2,200',
-    price2Months: '＄2,650',
-    price1Month: '＄3,200',
-    price2Weeks: '＄3,980',
+    price3Months: '¥220,000',
+    price2Months: '¥265,000',
+    price1Month: '¥320,000',
+    price2Weeks: '¥398,000',
     planCategory: 'spot',
   },
   {
     serviceName: '出願サポート',
-    price3Months: '＄980',
-    price2Months: '＄1,280',
-    price1Month: '＄1,480',
-    price2Weeks: '＄1,980',
+    price3Months: '¥98,000',
+    price2Months: '¥128,000',
+    price1Month: '¥148,000',
+    price2Weeks: '¥198,000',
     planCategory: 'spot',
   },
   {
     serviceName: '入学手続きサポート',
-    price3Months: '＄1,480',
-    price2Months: '＄1,780',
-    price1Month: '＄1,980',
-    price2Weeks: '＄2,980',
+    price3Months: '¥148,000',
+    price2Months: '¥178,000',
+    price1Month: '¥198,000',
+    price2Weeks: '¥298,000',
     planCategory: 'spot',
   },
 ];
@@ -213,7 +213,7 @@ export const PricingTable = () => {
                       <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={priceColWidth}>{item.price1Month || '-'}</Td>
                       <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={priceColWidth} borderRightWidth="0px"> 
                         {item.price2Weeks ? item.price2Weeks : 
-                          (item.serviceName.includes('＋入学手続きサポートセット')) && (item.planCategory === 'package') ?
+                          (item.serviceName.includes('入学準備セット')) && (item.planCategory === 'package') ?
                           <Box w="full" h="full" display="flex" alignItems="center" justifyContent="center">
                             <svg width="80%" height="30px" viewBox="0 0 100 50" preserveAspectRatio="none" style={{ display: 'block', margin: 'auto' }}>
                               <line x1="0" y1="50" x2="100" y2="0" stroke="lightgray" strokeWidth="2" />
