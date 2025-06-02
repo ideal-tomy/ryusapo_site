@@ -24,7 +24,7 @@ export const Footer = () => {
                 display={{ base: 'none', md: 'block' }}
               />
             </Box>
-            <Text fontSize="sm">
+            <Text fontSize="lg">
               世界は、思ったより近い。
             </Text>
           </Stack>

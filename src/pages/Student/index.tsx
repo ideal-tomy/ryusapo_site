@@ -23,14 +23,20 @@ export const StudentPage = () => {
         bgImage="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070"
         height={{ base: "auto", md: "400px" }}
         textColor="white"
+        titleFontSize={{ base: "26px", md: "3xl" }}
+        descriptionFontSize={{ base: "16px", md: "xl" }}
       />
       
       <Container maxW="container.md" py={{ base: 8, md: 10 }} textAlign="center">
-        <Text fontSize="lg" color="gray.700">
+        <Text fontSize={{base: "md", md: "lg"}} color="gray.700">
           いま目の前にある世界は、全体のほんの一部。
           海外の空気を吸って、文化の違いに触れて、自分の言葉で思いを伝えてみる。
           その体験が、きっとあなたの「これから」を変えていきます。
+        </Text>
+        <Text fontSize={{base: "24px", md: "2xl"}} fontWeight="bold" color="gray.700" mt={4}>
           世界は、思ったより広くて、近い。
+        </Text>
+        <Text fontSize={{base: "md", md: "lg"}} color="gray.700" mt={4}>
           留サポは、あなたのはじめの一歩を、全力でサポートします。
         </Text>
       </Container>

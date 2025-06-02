@@ -211,15 +211,36 @@ export const PricingTable = () => {
                       <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={priceColWidth}>{item.price3Months || '-'}</Td>
                       <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={priceColWidth}>{item.price2Months || '-'}</Td>
                       <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={priceColWidth}>{item.price1Month || '-'}</Td>
-                      <Td {...commonTdProps} fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize} fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight} width={priceColWidth} borderRightWidth="0px"> 
-                        {item.price2Weeks ? item.price2Weeks : 
-                          (item.serviceName.includes('入学準備セット')) && (item.planCategory === 'package') ?
-                          <Box w="full" h="full" display="flex" alignItems="center" justifyContent="center">
-                            <svg width="80%" height="30px" viewBox="0 0 100 50" preserveAspectRatio="none" style={{ display: 'block', margin: 'auto' }}>
-                              <line x1="0" y1="50" x2="100" y2="0" stroke="lightgray" strokeWidth="2" />
-                            </svg>
-                          </Box>
-                          : '-'}
+                      <Td
+                        {...commonTdProps}
+                        p={0}
+                        position="relative"
+                        borderRightWidth="0px"
+                        fontSize={item.highlight && !isMobile ? "lg" : commonTdProps.fontSize}
+                        fontWeight={item.highlight ? "extrabold" : commonTdProps.fontWeight}
+                        width={priceColWidth}
+                      >
+                        {item.price2Weeks ?? (
+                          item.planCategory === "package" && (
+                            <Box as="span" position="absolute" inset="0">
+                              <svg
+                                width="100%"
+                                height="100%"
+                                viewBox="0 0 100 100"
+                                preserveAspectRatio="none"
+                                style={{ display: "block" }}
+                              >
+                                <line
+                                  x1="0" y1="100"
+                                  x2="100" y2="0"
+                                  stroke="lightgray"
+                                  strokeWidth="2"
+                                  strokeLinecap="square"
+                                />
+                              </svg>
+                            </Box>
+                          )
+                        )}
                       </Td>
                     </Tr>
                   );
