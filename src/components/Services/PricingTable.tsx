@@ -72,6 +72,7 @@ export const PricingTable = () => {
     textAlign: "center" as const,
     fontWeight: "bold",
     verticalAlign: "middle",
+    whiteSpace: "nowrap" as const,
   };
   const commonTdProps = {
     py: isMobile ? 3 : 4,
@@ -82,6 +83,7 @@ export const PricingTable = () => {
     fontSize: isMobile ? "sm" : "md",
     fontWeight: "bold",
     verticalAlign: "middle",
+    whiteSpace: "nowrap" as const,
   };
 
   const categoryColWidth = isMobile ? "80px" : "15%";
@@ -183,7 +185,7 @@ export const PricingTable = () => {
 
                             return (
                               <VStack align="center" spacing={0} width="full">
-                                <Text fontSize={titleFontSize} fontWeight={titleFontWeight} color={titleColor} lineHeight="shorter" mb={isMobile ? 0.5 : 1}>
+                                <Text fontSize={titleFontSize} fontWeight={titleFontWeight} color={titleColor} lineHeight="shorter" mb={isMobile ? 0.5 : 1} whiteSpace="nowrap">
                                   {serviceTitle}
                                 </Text>
                                 <Text fontSize={descFontSize} fontWeight={descFontWeight} color={descColor} whiteSpace="pre-line" lineHeight="tight">
