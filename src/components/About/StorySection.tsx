@@ -21,7 +21,7 @@ export const StorySection = () => {
                 留サポのはじまりに込めた想い
               </Heading>
               
-              <Text fontSize="lg" color="gray.700" lineHeight="taller" whiteSpace="pre-line">
+              <Text fontSize={{ base: '16px', md: 'lg' }} color="gray.700" lineHeight="taller" whiteSpace="pre-line">
               子どもが自分の人生を、自分の意思で歩みはじめる。 その瞬間を後押しする場所をつくりたい── それが、私たちが留サポを立ち上げた原点です。
 
 語学だけではない、偏差値でもない。 

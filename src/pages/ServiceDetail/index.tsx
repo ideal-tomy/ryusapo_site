@@ -9,8 +9,8 @@ const serviceData = [
   {
     key: 'camp',
     title: 'サマーキャンプ',
-    catch: '世界が変わるきっかけは、たった一歩の勇気から',
-    subtitle: '海外挑戦の最初の一歩。現地校見学・本格留学への土台づくり',
+    catch: '世界が変わるきっかけは、\nたった一歩の勇気から',
+    subtitle: '海外挑戦の最初の一歩。\n現地校見学・本格留学への土台づくり',
     image: '/images/S__10854415_0.jpg',
     bg: 'linear-gradient(135deg, #f0f4ff 60%, #e3f6fc 100%)',
     description: `「海外に行ってみたいけど、ちょっと不安…」そんなあなたへ。
@@ -208,10 +208,18 @@ const ServiceDetailPage = () => {
               <Badge colorScheme="blue" fontSize={{ base: '22px', md: 'lg' }} mb={2} px={4} py={1} borderRadius="full" fontWeight="bold">
                 {serviceData[0].title}
               </Badge>
-              <Heading as="h2" size={{ base: 'lg', md: '2xl' }} color="brand.base" mb={2} fontWeight="extrabold" letterSpacing="wide">
+              <Heading 
+                as="h2" 
+                size={{ base: 'lg', md: '2xl' }} 
+                color="brand.base" 
+                mb={2} 
+                fontWeight="extrabold" 
+                letterSpacing="wide" 
+                whiteSpace="pre-line"
+              >
                 {serviceData[0].catch}
               </Heading>
-              <Text fontSize={{ base: 'md', md: 'xl' }} color="gray.700" mb={2} fontWeight="bold">
+              <Text fontSize={{ base: 'md', md: 'xl' }} color="gray.700" mb={2} fontWeight="bold" whiteSpace="pre-line">
                 {serviceData[0].subtitle}
               </Text>
             </Box>
@@ -325,7 +333,7 @@ const ServiceDetailPage = () => {
                       {idx === 0 && (
                         <Divider borderColor="gray.300" borderWidth={1} my={8} w="80%" mx="auto" />
                       )}
-                      <Heading as="h3" size={{ base: 'md', md: 'xl' }} color="brand.base" mb={4} fontWeight="bold" textAlign="center">
+                      <Heading as="h3" fontSize={{ base: '20px', md: '36px' }} color="brand.base" mb={4} fontWeight="bold" textAlign="center">
                         {item.title}
                     </Heading>
                       <Grid
@@ -349,10 +357,10 @@ const ServiceDetailPage = () => {
                           />
                   </Box>
                         <Box order={{ base: 2, md: idx % 2 === 0 ? 2 : 1 }} textAlign="left">
-                          <Text mt={2} fontSize='24px'>{item.desc}</Text>
+                          <Text mt={2} fontSize={{ base: '16px', md: '24px' }}>{item.desc}</Text>
                 </Box>
                       </Grid>
-                      <Text color="blue.600" fontWeight="bold" fontSize='28px' mt={4} mb={2} textAlign="center">
+                      <Text color="blue.600" fontWeight="bold" fontSize={{ base: '16px', md: '28px' }} mt={4} mb={2} textAlign="center">
                         {item.blue}
                     </Text>
                       {idx !== arr.length - 1 && (

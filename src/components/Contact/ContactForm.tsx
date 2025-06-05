@@ -15,8 +15,8 @@ export const ContactForm = () => {
       <Box
         as="iframe"
         src="https://docs.google.com/forms/d/e/1FAIpQLSd0zT_D5h54lODf-foCtR2Me0coRfMTk5ICyH1xoeLQwQBZ1w/viewform?embedded=true"
-        w="640px"
-        h="800px"
+        w={{ base: "100%", md: "640px" }}
+        h={{ base: "1000px", md: "800px" }}
         frameBorder={0}
       >
         読み込んでいます…

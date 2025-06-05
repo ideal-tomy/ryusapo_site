@@ -23,7 +23,7 @@ export const ContactPage = () => {
       
       {/* 2. お問い合わせページの見出し */}
       <Box bg="gray.50" py={12}>
-        <Container maxW="container.xl">
+        <Container maxW="container.xl" px={{ base: 4 }}>
           <Flex direction="column" align="center" textAlign="center" mb={10}>
             <Icon as={FaComments} boxSize={12} color="brand.accent" mb={4} />
             <Heading as="h2" size="xl" color="brand.base" mb={3}>

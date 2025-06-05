@@ -67,7 +67,7 @@ export const MissionVision = () => {
             <Heading as="h2" size="2xl" mb={5} color="brand.base">
               世界は、思ったより近い。
             </Heading>
-            <Text fontSize="xl" color="gray.700" maxW="container.md" mx="auto" lineHeight="tall">
+            <Text fontSize={{ base: '16px', md: 'xl' }} color="gray.700" maxW="container.md" mx="auto" lineHeight="tall">
             知識や偏差値だけに頼らず、自ら考え、選び、行動する力を育むこと。
 そして、世界に身を置くリアルな体験を通じて、
 他者と違うことを恐れず、自分の価値を自分の言葉で伝えられる人物の育成を目指しています。
