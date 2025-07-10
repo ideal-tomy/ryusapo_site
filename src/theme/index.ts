@@ -10,8 +10,8 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    heading: "'Noto Sans JP', sans-serif",
-    body: "'Noto Sans JP', sans-serif",
+    heading: "'Noto Serif JP', serif",
+    body: "'Noto Serif JP', serif",
   },
   styles: {
     global: {

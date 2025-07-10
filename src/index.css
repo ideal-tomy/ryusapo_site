@@ -1,6 +1,6 @@
 :root {
-  font-family: 'Noto Sans JP', sans-serif;
-  line-height: 1.6;
+  font-family: 'Noto Serif JP', serif;
+  line-height: 1.8;
   font-weight: 400;
 
   font-synthesis: none;
@@ -15,9 +15,25 @@
   padding: 0;
 }
 
+/* 明朝体に適した追加スタイリング */
 body {
   min-height: 100vh;
   overflow-x: hidden;
+  font-feature-settings: "palt" 1, "pkna" 1;
+  letter-spacing: 0.05em;
+}
+
+/* 見出しの明朝体スタイリング */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+}
+
+/* 明朝体での読みやすさ向上 */
+p {
+  text-align: justify;
+  text-justify: inter-ideograph;
 }
 
 /* セクションの基本余白（共通ルールに基づく） */
