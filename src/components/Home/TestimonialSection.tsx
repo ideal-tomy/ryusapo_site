@@ -84,15 +84,7 @@ const Testimonial = ({ name, age, beforeText, afterText, avatarUrl, rating }: Te
         </Box>
       </Flex>
 
-      {rating && (
-        <Flex mb={3}>
-          {Array(rating)
-            .fill(0)
-            .map((_, i) => (
-              <Icon key={i} as={FaStar} color="orange.400" w={5} h={5} />
-            ))}
-        </Flex>
-      )}
+      {/* 星マーク削除済み */}
 
       <Box w="100%" flex="1">
         <Badge colorScheme="red" mb={2}>Before</Badge>
